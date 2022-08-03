@@ -1,0 +1,26 @@
+.home {
+    display: flex;
+    justify-content: space-between;
+}
+.left {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 0 4px 0px;
+
+    border-radius: 10px;
+
+    width: 630px;
+    height: 50px;
+
+    padding: 7px 14px;
+
+    background-color: white;
+}
+.right {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 0 4px 0px;
+
+    border-radius: 10px;
+
+    width: 310px;
+    height: 50px;
+
+    background-color: white;
+}
