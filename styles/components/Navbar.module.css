@@ -6,9 +6,10 @@
     height: 60px;
     width: 100%;
 
-    padding: 8px 20px;
+    padding: 10px 20px;
 
     position: fixed;
+    z-index: 10;
 
     box-shadow: 0 0 1px rgb(0 0 0 / 10%);
     background: white;
@@ -22,6 +23,57 @@
     color: #4971FF;
 }
 
+
+.right {
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+}
+.menu_create {
+    height: 100%;
+    width: 44px;
+
+    margin-right: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+.menu_create:hover {
+    transition: .5s;
+
+    background-color: #DEEBFF;
+}
+.notification {
+    height: 100%;
+    width: 44px;
+
+    margin-right:8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+.notification:hover {
+    transition: .5s;
+
+    background-color: #DEEBFF;
+}
+
+
 /* USER */
 .user {
     height: 100%;
@@ -33,7 +85,10 @@
     align-items: center;
 
     padding: 7px 10px;
+
+    font-size: 17px;
 }
+
 .user:hover {
     transition: .5s;
 
@@ -50,6 +105,7 @@
 
     object-fit: cover;
 }
+
 .name_role {
     display: flex;
     flex-direction: column;
@@ -63,6 +119,7 @@
 .name {
     color: #232323;
 }
+
 .role {
     color: #494949;
     font-weight: 600;
@@ -85,6 +142,7 @@
 
     height: 100%;
 }
+
 .login:hover {
     transition: .5s;
 

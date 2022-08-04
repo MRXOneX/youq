@@ -1,0 +1,48 @@
+.question {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 0 5px 0px;
+
+    border-radius: 10px;
+
+    width: 630px;
+    max-height: auto;
+
+    padding: 20px;
+
+    background-color: white;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.avatar {
+    height: 42px ;
+    width: 42px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+.info {
+    margin-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    line-height: 20px;
+
+    font-size: 20px;
+}
+.name {
+    color: #232323;
+
+    font-weight: 700;
+}
+.hours_item {
+    color: #494949;
+}
