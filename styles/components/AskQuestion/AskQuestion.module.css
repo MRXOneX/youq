@@ -93,6 +93,13 @@
     color: #494949;
 }
 
+.select_item {
+    width: 250px;
+}
+.select_class {
+    width: 150px;
+}
+
 .btn_ask_question {
     background: #4971FF;
     color: white;

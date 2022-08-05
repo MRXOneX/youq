@@ -58,13 +58,13 @@ const AskQuestion = () => {
                         <span className={styles.title_select}>
                             По какому предмету твой вопрос?
                         </span>
-                        <Select placeholder="Выбери предмет" />
+                        <Select className={styles.select_item} placeholder="Выбери предмет" />
                     </div>
-                    <div style={{marginLeft: '20px'}}>
+                    <div style={{ marginLeft: '20px' }}>
                         <span className={styles.title_select}>
                             В каком ты классе?
                         </span>
-                    <Select placeholder="Твой класс" />
+                        <Select className={styles.select_class} placeholder="Твой класс" />
                     </div>
                 </div>
                 <button onClick={createQuestion} className={styles.btn_ask_question}>
