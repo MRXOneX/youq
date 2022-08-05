@@ -13,6 +13,8 @@ const FiltredQuestion = () => {
             </div>
             <div className={styles.content}>
                 <Select placeholder="Выберите предмет"  />
+
+                <Select className={styles.class} placeholder="Твой класс"  />
             </div>
 
         </div>

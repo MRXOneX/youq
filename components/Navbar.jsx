@@ -43,9 +43,9 @@ const Navbar = () => {
                         <button className={styles.menu_create}>
                             <MenuCreate size={33} />
                         </button>
-                        <button className={styles.notification}>
+                        {/* <button className={styles.notification}>
                             <Notification color="#344563" size={25} />
-                        </button>
+                        </button> */}
                     </>
                 )}
                 {status === 'authenticated' ? (

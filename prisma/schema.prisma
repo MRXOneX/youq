@@ -3,12 +3,17 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
 }
+
+
+
 
 model Account {
   id                String  @id @default(cuid())
@@ -45,6 +50,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+
+  isAdmin   Boolean @default(false)
 }
 
 model VerificationToken {
@@ -53,4 +60,22 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+
+
+model Question {
+  id                Int  @id @default(autoincrement())
+  text String
+  item Item @default(USER)
+  class Class @default(USER)
+}
+
+enum Item {
+  USER
+  ADMIN
+}
+enum Class {
+  USER
+  ADMIN
 }

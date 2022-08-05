@@ -1,9 +1,20 @@
 //
+import { useRouter } from 'next/router'
+//
 import styles from '../styles/components/SearchQuestion.module.css'
 
 
 
+
 const SearchQuestion = () => {
+
+
+    const router = useRouter()
+    const onAskQuestion = () => {
+        router.push('/ask-question')
+    }
+
+
     return (
         <div className={styles.search_question}>
             <input 
@@ -11,7 +22,7 @@ const SearchQuestion = () => {
                 placeholder='Найдите ответ на ваш вопрос...' 
                 type="text" 
             />
-            <button className={styles.ask_question}>
+            <button onClick={onAskQuestion} className={styles.ask_question}>
                 Задать вопрос
             </button>
         </div>

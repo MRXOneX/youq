@@ -4,7 +4,11 @@ import { useRouter } from 'next/router'
 import styles from '../styles/components/QuestionItem.module.css'
 
 
-const QuestionItem = () => {
+
+
+
+
+const QuestionItem = ({ question }) => {
 
     const router = useRouter()
 
@@ -13,10 +17,10 @@ const QuestionItem = () => {
         <div className={styles.question_item}>
             <div className={styles.header}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img 
+                    <img
                         className={styles.avatar}
-                        src="https://i.imgur.com/67syzoU.png" 
-                        alt="" 
+                        src="https://i.imgur.com/67syzoU.png"
+                        alt=""
                     />
                     <div className={styles.info}>
                         <span className={styles.name}>
@@ -32,8 +36,8 @@ const QuestionItem = () => {
                 </div>
             </div>
             <div className={styles.content}>
-                <p className={styles.text} onClick={() => router.push('/question/1')}>
-                Kaley solved 10 x 5 x 2 using the equations below.    1010101010 x 5 x 2 = (10 × 5) × 2 = 50 x 2 = 100 Use the equations below to solve 10 x 5 x 2 in assss
+                <p className={styles.text} onClick={() => router.push(`/question/${question.id}`)}>
+                    {question.text}
                 </p>
             </div>
             <div className={styles.footer}>

@@ -3,15 +3,19 @@ import styles from '../styles/components/QuestionQ.module.css'
 
 
 
-const QuestionQ = () => {
+
+
+
+const QuestionQ = ({ question }) => {
+    console.log(question)
     return (
         <div className={styles.question}>
             <div className={styles.header}>
                 <div style={{ display: 'flex' }}>
-                    <img 
+                    <img
                         className={styles.avatar}
-                        src="https://i.imgur.com/67syzoU.png" 
-                        alt="" 
+                        src="https://i.imgur.com/67syzoU.png"
+                        alt=""
                     />
                     <div className={styles.info}>
                         <span className={styles.name}>
@@ -22,6 +26,11 @@ const QuestionQ = () => {
                         </span>
                     </div>
                 </div>
+            </div>
+            <div className={styles.content}>
+                <p className={styles.text}>
+                    {question.text}
+                </p>
             </div>
         </div>
     )

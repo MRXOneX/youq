@@ -1,20 +1,44 @@
-import { useRouter } from "next/router"
+import { PrismaClient } from "@prisma/client"
 // components
 import QuestionQ from "../../components/QuestionQ"
+import QuestionQToolbar from "../../components/QuestionQToobar"
 // layouts
 import PageContainer from '../../layouts/PageContainer'
 //
 import styles from '../../styles/pages/Question.module.css'
 
 
-const Question = () => {
+const prisma = new PrismaClient()
 
-    const router = useRouter()
+export async function getServerSideProps({ params }) {
+
+    const question = await prisma.question.findUnique({
+        where: {
+          id: +params.slug,
+        },
+      })
+
+
+    return {
+        props: { question },
+    }
+}
+
+
+
+
+
+const Question = ({ question }) => {
+
 
     return (
         <PageContainer>
             <div className={styles.left}>
-                <QuestionQ />
+                <QuestionQ question={question} />
+                <QuestionQToolbar />
+                <span className={styles.title_answers}>
+                    Ответ или решение: 1
+                </span>
             </div>
             <div className={styles.right}>
 

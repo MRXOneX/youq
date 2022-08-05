@@ -7,7 +7,7 @@
     height: auto;
 
 
-    padding: 14px;
+    padding: 15px;
 
     background-color: white;
 }
@@ -22,11 +22,15 @@
     color: #232323;
 
     font-weight: 700;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 /* CONTENT */
 
 .content {
     padding-top: 15px;
+}
+
+.class {
+    margin-top: 15px;
 }

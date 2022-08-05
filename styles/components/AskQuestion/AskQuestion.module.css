@@ -80,9 +80,17 @@
 
 .footer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 
+}
+.selects {
+    display: flex;
+    align-items: center;
+}
+.title_select {
+    font-size: 14px;
+    color: #494949;
 }
 
 .btn_ask_question {

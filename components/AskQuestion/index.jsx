@@ -1,8 +1,28 @@
+import Select from 'react-select'
+//
+import { useSession } from 'next-auth/react'
+//
+import config from '../../config'
 //
 import styles from '../../styles/components/AskQuestion/AskQuestion.module.css'
+import { useState } from 'react'
 
 
 const AskQuestion = () => {
+    const [value, setValue] = useState('')
+
+    const { status } = useSession()
+
+
+    const createQuestion = () => {
+        if (status === 'authenticated') {
+            config.api_host.post('/question/create', {
+                text: value
+            })
+        }
+    }
+
+
     return (
         <div className={styles.ask_question}>
             <div>
@@ -12,11 +32,13 @@ const AskQuestion = () => {
             </div>
             <div className={styles.content}>
                 <textarea
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
                     placeholder='Write question here'
                     rows="8"
                     className={styles.textarea}
                 />
-                <div className={styles.toolbar}>
+                {/* <div className={styles.toolbar}>
                     <div>
                         <button className={styles.toolbar_btn}>
                             formules
@@ -28,11 +50,24 @@ const AskQuestion = () => {
                     <div>
                         <input type="text" />
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className={styles.footer}>
-                <input type="text" />
-                <button className={styles.btn_ask_question}>
+                <div className={styles.selects}>
+                    <div>
+                        <span className={styles.title_select}>
+                            По какому предмету твой вопрос?
+                        </span>
+                        <Select placeholder="Выбери предмет" />
+                    </div>
+                    <div style={{marginLeft: '20px'}}>
+                        <span className={styles.title_select}>
+                            В каком ты классе?
+                        </span>
+                    <Select placeholder="Твой класс" />
+                    </div>
+                </div>
+                <button onClick={createQuestion} className={styles.btn_ask_question}>
                     Задать вопрос
                 </button>
             </div>

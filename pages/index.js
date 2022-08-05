@@ -3,22 +3,38 @@ import QuestionItem from '../components/QuestionItem'
 import SearchQuestion from '../components/SearchQuestion'
 import PageContainer from '../layouts/PageContainer'
 //
+import { PrismaClient } from '@prisma/client'
+//
 import styles from '../styles/pages/Home.module.css'
 
-export default function Home() {
+
+const prisma = new PrismaClient()
+
+export async function getServerSideProps(context) {
+
+  const questions = await prisma.question.findMany()
+  
+
+  return {
+    props: {
+      questions
+    }, // will be passed to the page component as props
+  }
+}
+
+
+
+export default function Home({ questions }) {
+  console.log(questions)
   return (
     <PageContainer>
       <div className={styles.home}>
         <div className={styles.left}>
           <SearchQuestion />
           <div className={styles.questions}>
-            <QuestionItem />
-            <QuestionItem />
-            <QuestionItem />
-            <QuestionItem />
-            <QuestionItem />
-            <QuestionItem />
-            <QuestionItem />
+            {questions.map(question => (
+              <QuestionItem key={question.id} question={question} />
+            ))}
           </div>
         </div>
         <div className={styles.right}>
@@ -28,3 +44,6 @@ export default function Home() {
     </PageContainer>
   )
 }
+
+
+

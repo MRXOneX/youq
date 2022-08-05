@@ -36,7 +36,7 @@
 
     line-height: 20px;
 
-    font-size: 20px;
+    font-size: 19px;
 }
 .name {
     color: #232323;
@@ -45,4 +45,19 @@
 }
 .hours_item {
     color: #494949;
+}
+
+
+/* CONTENT */
+.content {
+    padding: 13px 5px 0 5px;
+}
+.text {
+    overflow-wrap: anywhere;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    font-size: 18px;
+    font-weight: 500;
+    -webkit-box-orient: vertical;
 }
