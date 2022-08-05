@@ -3,9 +3,10 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 //
 import { signIn, useSession, signOut } from 'next-auth/react'
+// components
+import Dropdown from '../layouts/Dropdown'
 // icons
 import MenuCreate from './Icons/MenuCreate'
-import Notification from './Icons/Notification'
 //
 import styles from '../styles/components/Navbar.module.css'
 
@@ -49,7 +50,8 @@ const Navbar = () => {
                     </>
                 )}
                 {status === 'authenticated' ? (
-                    <div className={styles.user}>
+                    <div style={{ position: 'relative' }}>
+                        <div className={styles.user}>
                         <img src={data.user?.image} className={styles.avatar} />
                         <div className={styles.name_role}>
                             <span className={styles.name}>
@@ -62,6 +64,11 @@ const Navbar = () => {
                         <button onClick={handleSignOut}>
                             signOut
                         </button>
+                    </div>
+
+                    <Dropdown>
+                            ss
+                        </Dropdown>
                     </div>
                 ) : (
                     <button onClick={handleSignIn} className={styles.login}>
