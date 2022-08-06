@@ -15,11 +15,9 @@ const AskQuestion = () => {
 
 
     const createQuestion = () => {
-        if (status === 'authenticated') {
-            config.api_host.post('/question/create', {
-                text: value
-            })
-        }
+        config.api_host.post('/question/create', {
+            text: value
+        })
     }
 
 

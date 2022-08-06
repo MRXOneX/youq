@@ -1,0 +1,12 @@
+.profile {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    width: 360px;
+}
+
+.right {
+    width: 580px;
+}

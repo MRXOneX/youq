@@ -1,0 +1,49 @@
+.user_info {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 0 5px 0px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 15px;
+
+    background-color: white;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 10px;
+}
+.name {
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 17px;
+}
+
+.level {
+    color: #494949;
+    font-weight: 600;
+    font-size: 20px;
+}
