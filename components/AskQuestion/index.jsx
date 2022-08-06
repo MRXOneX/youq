@@ -1,11 +1,14 @@
+import { useState } from 'react'
+//
 import Select from 'react-select'
 //
 import { useSession } from 'next-auth/react'
+// icons
+import Square from '../Icons/Square'
 //
 import config from '../../config'
 //
 import styles from '../../styles/components/AskQuestion/AskQuestion.module.css'
-import { useState } from 'react'
 
 
 const AskQuestion = () => {
@@ -36,19 +39,19 @@ const AskQuestion = () => {
                     rows="8"
                     className={styles.textarea}
                 />
-                {/* <div className={styles.toolbar}>
+                <div className={styles.toolbar}>
                     <div>
                         <button className={styles.toolbar_btn}>
-                            formules
+                            <Square color="#494949" />
                         </button>
-                        <button className={styles.toolbar_btn}>
+                        {/* <button className={styles.toolbar_btn}>
                             files
-                        </button>
+                        </button> */}
                     </div>
                     <div>
                         <input type="text" />
                     </div>
-                </div> */}
+                </div>
             </div>
             <div className={styles.footer}>
                 <div className={styles.selects}>
