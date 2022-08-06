@@ -7,12 +7,12 @@ const QuestionQToolbar = () => {
         <div className={styles.toolbar}>
             <button>
                 <span>
-                    Add Answer
+                    Дать ответ
                 </span>
             </button>
             <button>
                 <span>
-                    Add comment
+                    Уточнить
                 </span>
             </button>
         </div>
