@@ -1,10 +1,10 @@
 import styles from '../styles/layouts/Dropdown.module.css'
 
 
-const Dropdown = ({ style }) => {
+const Dropdown = ({ style, children }) => {
     return (
         <div style={style} className={styles.dropdown}>
-            return 
+            {children} 
         </div>
     )
 }

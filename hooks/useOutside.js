@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 
 const useOutside = onClose => {
     const ref = useRef(null)

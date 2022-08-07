@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client"
 // components
+import QuestionA from "../../components/QuestionA"
 import QuestionQ from "../../components/QuestionQ"
 import QuestionQToolbar from "../../components/QuestionQToobar"
 // layouts
@@ -39,6 +40,7 @@ const Question = ({ question }) => {
                 <span className={styles.title_answers}>
                     Ответ или решение: 1
                 </span>
+                <QuestionA />
             </div>
             <div className={styles.right}>
 

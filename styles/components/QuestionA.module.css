@@ -1,0 +1,12 @@
+.question_a {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 0 5px 0px;
+
+    border-radius: 10px;
+
+    width: 630px;
+    max-height: auto;
+
+    padding: 20px;
+
+    background-color: white;
+}

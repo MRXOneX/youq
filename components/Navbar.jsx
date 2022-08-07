@@ -1,12 +1,17 @@
+import { useState } from 'react'
+//
 import Link from 'next/link'
 //
 import { useRouter } from 'next/router'
 //
 import { signIn, useSession, signOut } from 'next-auth/react'
+//
+import useOutside from '../hooks/useOutside'
 // components
 import Dropdown from '../layouts/Dropdown'
 // icons
 import MenuCreate from './Icons/MenuCreate'
+import Exit from './Icons/Exit'
 //
 import styles from '../styles/components/Navbar.module.css'
 
@@ -15,6 +20,8 @@ import styles from '../styles/components/Navbar.module.css'
 const Navbar = () => {
 
     const { data, status } = useSession()
+    
+    const [isOpenUser, setIsOpenUser] = useState(false)
 
     const router = useRouter()
 
@@ -30,6 +37,8 @@ const Navbar = () => {
             callbackUrl: 'http://localhost:3000/'
         })
     }
+
+    const { ref } = useOutside()
 
     return (
         <div className={styles.navbar}>
@@ -61,14 +70,18 @@ const Navbar = () => {
                                 Админ
                             </span>
                         </div>
-                        <button onClick={handleSignOut}>
-                            signOut
-                        </button>
                     </div>
 
-                    <Dropdown>
-                            ss
-                        </Dropdown>
+                    <Dropdown ref={ref}  isShow={isOpenUser} setIsOpenUser>
+                        <div className={styles.dropdown}>
+                            <button onClick={handleSignOut} className={styles.exit}>
+                                <Exit color="#FF3D3D" size={22} />
+                                <span className={styles.exit_title}>
+                                    Sign out
+                                </span>
+                            </button>
+                        </div>
+                    </Dropdown>
                     </div>
                 ) : (
                     <button onClick={handleSignIn} className={styles.login}>
