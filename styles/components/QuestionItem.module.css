@@ -27,6 +27,8 @@
     height: 33px;
     width: 33px;
 
+    cursor: pointer;
+
     border-radius: 50%;
 
     object-fit: contain;

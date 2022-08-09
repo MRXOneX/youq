@@ -5,27 +5,19 @@ import PageContainer from '../layouts/PageContainer'
 //
 import { PrismaClient } from '@prisma/client'
 //
+import { trpc } from '../utils/trpc'
+//
 import styles from '../styles/pages/Home.module.css'
 
 
-const prisma = new PrismaClient()
 
-export async function getServerSideProps(context) {
+export default function Home() {
 
-  const questions = await prisma.question.findMany()
-  
-
-  return {
-    props: {
-      questions
-    }, // will be passed to the page component as props
-  }
-}
+  const { data: questions = [] } = trpc.useQuery([
+    'question.getAll'
+  ])
 
 
-
-export default function Home({ questions }) {
-  console.log(questions)
   return (
     <PageContainer>
       <div className={styles.home}>

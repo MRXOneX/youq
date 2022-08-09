@@ -18,6 +18,7 @@ export async function getServerSideProps({ params }) {
         where: {
             id: params.slug,
         },
+        include: { comments: true, answers: true }
     })
 
 

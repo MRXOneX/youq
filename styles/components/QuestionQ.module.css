@@ -19,8 +19,8 @@
     justify-content: space-between;
 }
 .avatar {
-    height: 42px ;
-    width: 42px;
+    height: 40px ;
+    width: 40px;
 
     object-fit: contain;
 
@@ -36,7 +36,7 @@
 
     line-height: 20px;
 
-    font-size: 19px;
+    font-size: 18px;
 }
 .name {
     color: #232323;
@@ -57,7 +57,44 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     -webkit-box-orient: vertical;
+}
+
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 15px;
+    padding-top: 17px;
+    border-top: 1px solid hsl(0, 0%, 90%);
+}
+
+.comment {
+    display: flex;
+    align-items: center;
+}
+.comment:not(:first-child) {
+    margin-top: 15px;
+}
+.comment_avatar {
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+
+    object-fit: contain;
+}
+
+.comment_text {
+    margin-left: 10px;
+
+    font-size: 18px;
+
+
+    overflow-wrap: anywhere;
 }

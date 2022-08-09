@@ -5,13 +5,13 @@ const UserInfo = ({ user }) => {
     return (
         <div className={styles.user_info}>
             <div className={styles.header}>
-                <img className={styles.avatar} src={user.image} alt="" />
+                <img className={styles.avatar} src={user?.image} alt="" />
                 <div className={styles.info}>
                     <span className={styles.name}>
-                        {user.name}
+                        {user?.name}
                     </span>
                     <span className={styles.level}>
-                        {user.isAdmin ? "Admin" : "User"}
+                        {user?.isAdmin ? "Admin" : "User"}
                     </span>
                 </div>
             </div>

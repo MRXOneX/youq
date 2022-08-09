@@ -18,13 +18,14 @@ const QuestionItem = ({ question }) => {
             <div className={styles.header}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <img
+                        onClick={() => router.push(`/profile/${question?.author?.id}`)}
                         className={styles.avatar}
-                        src="https://i.imgur.com/67syzoU.png"
+                        src={question?.author?.image}
                         alt=""
                     />
                     <div className={styles.info}>
                         <span className={styles.name}>
-                            Misha Poleshchenkov
+                            {question?.author?.name}
                         </span>
                         <span className={styles.hours_item}>
                             hours and item
@@ -42,7 +43,11 @@ const QuestionItem = ({ question }) => {
             </div>
             <div className={styles.footer}>
                 <div>
-                    info
+                    {question?.answers?.length > 0 && (
+                        <span>
+                            Ответов: <b>{question.answers.length}</b>
+                        </span>
+                    )}
                 </div>
                 <div>
                     <button className={styles.answer}>

@@ -30,7 +30,7 @@
     align-items: center;
 
     color: #4971FF;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 
     background: none;
@@ -52,26 +52,3 @@
 }
 
 
-
-
-
-.edit_answer {
-    margin-top: 10px;
-
-    resize: none;
-    outline: none;
-
-    border: 1px solid;
-    border-color: hsl(0, 0%, 80%);
-
-    font-size: 18px;
-
-    padding: 10px;
-
-    border-radius: 10px;
-}
-.edit_answer:focus {
-
-    padding: 9px;
-    border: 2px solid #2684ff;
-}

@@ -1,7 +1,8 @@
+import { withTRPC } from '@trpc/next'
+import superjson from 'superjson'
 import { SessionProvider } from 'next-auth/react'
-import { Provider } from 'react-redux'
+// components
 import AuthWrapper from '../components/AuthWrapper'
-import { store } from '../store'
 //
 import '../styles/globals.css'
 
@@ -9,14 +10,28 @@ function MyApp({ Component, pageProps }) {
 
 
   return (
-   <Provider store={store}>
-     <SessionProvider session={pageProps.session}>
+    <SessionProvider session={pageProps.session}>
       <AuthWrapper>
         <Component {...pageProps} />
       </AuthWrapper>
     </SessionProvider>
-   </Provider>
   )
 }
 
-export default MyApp
+
+export default withTRPC({
+  config({ ctx }) {
+
+
+    const url = 'http://localhost:3000/api/trpc'
+
+    return {
+      url,
+      transformer: superjson
+    }
+  },
+
+  ssr: true
+})(MyApp)
+
+

@@ -10,8 +10,14 @@ export default async (req, res) => {
     try {
         const question = req.body
         
+        console.log(question)
         const savedQuestion = await prisma.question.create({
-            data: question
+            data: {
+                text: question.text,
+                item: question.item,
+                class: question.class,
+                author: { connect: { id: question.authorId } }
+            }
         })
         res.status(200).json(savedQuestion)
     } catch (error) {
