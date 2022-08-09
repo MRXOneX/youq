@@ -3,8 +3,6 @@ import QuestionItem from '../components/QuestionItem'
 import SearchQuestion from '../components/SearchQuestion'
 import PageContainer from '../layouts/PageContainer'
 //
-import { PrismaClient } from '@prisma/client'
-//
 import { trpc } from '../utils/trpc'
 //
 import styles from '../styles/pages/Home.module.css'

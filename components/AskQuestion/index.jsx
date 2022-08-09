@@ -8,8 +8,6 @@ import { useSession } from 'next-auth/react'
 // icons
 import Square from '../Icons/Square'
 //
-import config from '../../config'
-//
 import styles from '../../styles/components/AskQuestion/AskQuestion.module.css'
 
 const classesOptions = [
