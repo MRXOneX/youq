@@ -19,7 +19,6 @@ export const protectedQuestionRouter = createProtectedRouter()
             })
         }
     })
-    .query()
     .mutation('create', {
         input: z
             .object({
