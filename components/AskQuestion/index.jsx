@@ -51,9 +51,9 @@ const AskQuestion = () => {
 
     const { data, status } = useSession()
 
-    const question = trpc.useMutation(['question.create']);
+    const question = trpc.useMutation(['question_protected.create']);
 
-    const authorId = data.user.id
+    const authorId = data?.user?.id
 
     const createQuestion = () => {
         // config.api_host.post('/question/create', {

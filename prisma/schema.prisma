@@ -41,8 +41,8 @@ model Session {
 
 model User {
   id String @id @default(cuid())
-  // createdAt DateTime @default(now())
-  // updatedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 
   name          String?
   email         String?   @unique
@@ -68,8 +68,8 @@ model VerificationToken {
 
 model Question {
   id Int @id @default(autoincrement())
-  // createdAt DateTime? @default(now())
-  // updatedAt DateTime? @default(now())
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @default(now())
 
   text  String @db.VarChar(3000)
   item  Item
@@ -85,8 +85,8 @@ model Question {
 model Answer {
   id   Int    @id @default(autoincrement())
   text String @db.VarChar(3000)
-  // createdAt DateTime @default(now())
-  // updatedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 
   question   Question? @relation(fields: [questionId], references: [id])
   questionId Int?
@@ -98,8 +98,8 @@ model Answer {
 model Comment {
   id   Int    @id @default(autoincrement())
   text String @db.VarChar(300)
-  // createdAt DateTime? @default(now())
-  // updatedAt DateTime? @default(now())
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @default(now())
 
   question   Question? @relation(fields: [questionId], references: [id])
   questionId Int?

@@ -20,7 +20,7 @@ import styles from '../styles/components/Navbar.module.css'
 const Navbar = () => {
 
     const { data, status } = useSession()
-    
+
     const [isOpenUser, setIsOpenUser] = useState(false)
 
     const router = useRouter()
@@ -37,8 +37,9 @@ const Navbar = () => {
             callbackUrl: 'http://localhost:3000/'
         })
     }
+    console.log(isOpenUser)
 
-    const { ref } = useOutside()
+    const { ref } = useOutside(() => setIsOpenUser(false))
 
     return (
         <div className={styles.navbar}>
@@ -60,28 +61,28 @@ const Navbar = () => {
                 )}
                 {status === 'authenticated' ? (
                     <div style={{ position: 'relative' }}>
-                        <div className={styles.user}>
-                        <img src={data.user?.image} className={styles.avatar} />
-                        <div className={styles.name_role}>
-                            <span className={styles.name}>
-                                {data.user?.name}
-                            </span>
-                            <span className={styles.role}>
-                                Админ
-                            </span>
-                        </div>
-                    </div>
-
-                    <Dropdown ref={ref}  isShow={isOpenUser} setIsOpenUser>
-                        <div className={styles.dropdown}>
-                            <button onClick={handleSignOut} className={styles.exit}>
-                                <Exit color="#FF3D3D" size={22} />
-                                <span className={styles.exit_title}>
-                                    Sign out
+                        <div onClick={() => setIsOpenUser(true)} className={styles.user}>
+                            <img src={data.user?.image} className={styles.avatar} />
+                            <div className={styles.name_role}>
+                                <span className={styles.name}>
+                                    {data.user?.name}
                                 </span>
-                            </button>
+                                <span className={styles.role}>
+                                    Админ
+                                </span>
+                            </div>
                         </div>
-                    </Dropdown>
+
+                        <Dropdown ref={ref} isShow={isOpenUser} setIsOpenUser={setIsOpenUser}>
+                            <div className={styles.dropdown}>
+                                <button onClick={handleSignOut} className={styles.exit}>
+                                    <Exit color="#FF3D3D" size={22} />
+                                    <span className={styles.exit_title}>
+                                        Sign out
+                                    </span>
+                                </button>
+                            </div>
+                        </Dropdown>
                     </div>
                 ) : (
                     <button onClick={handleSignIn} className={styles.login}>

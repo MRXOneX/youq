@@ -15,6 +15,8 @@ export default function Home() {
     'question.getAll'
   ])
 
+  console.log(questions)
+
 
   return (
     <PageContainer>

@@ -20,7 +20,7 @@
     border: none;
     outline: none;
 
-    color: #4c5577;
+    color: #232323;
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
@@ -30,7 +30,7 @@
     padding: 8px 16px;
 }
 .element:hover {
-    background-color: #DEEBFF;
+    background-color: #E8F1FF;
 }
 
 .active {

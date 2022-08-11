@@ -9,16 +9,6 @@ import { createProtectedRouter } from "./protected-router";
 
 
 export const protectedQuestionRouter = createProtectedRouter()
-    .query('getAll', {
-        async resolve({ ctx }) {
-            return await ctx.prisma.question.findMany({
-                include: {
-                    author: true,
-                    answers: true
-                }
-            })
-        }
-    })
     .mutation('create', {
         input: z
             .object({
