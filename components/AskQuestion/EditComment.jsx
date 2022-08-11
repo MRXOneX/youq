@@ -1,9 +1,5 @@
 import { useState } from 'react'
 //
-import { useSession } from 'next-auth/react'
-//
-import { useRouter } from 'next/router'
-//
 import { trpc } from '../../utils/trpc'
 //
 import styles from '../../styles/components/AskQuestion/EditComment.module.css'
@@ -11,29 +7,19 @@ import styles from '../../styles/components/AskQuestion/EditComment.module.css'
 
 
 
-const EditComment = ({ questionId }) => {
+const EditComment = ({ authorId, questionId }) => {
     const [comment, setComment] = useState('')
 
-    const { data } = useSession()
 
-    const router = useRouter()
-
-    const question = trpc.useMutation(['question.comment'])
+    const question = trpc.useMutation(['question_protected.create_comment'])
 
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            // config.api_host.post('/question/update/comment', {
-            //     text: comment,
-            //     questionId: +router.query?.slug,
-            //     author: {
-            //         email: data?.user?.email
-            //     }
-            // })
             question.mutate({
                 text: comment,
-                questionId: questionId,
-                authorId: data.user.id
+                questionId,
+                authorId
             })
 
             

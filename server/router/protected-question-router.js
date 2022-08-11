@@ -29,24 +29,52 @@ export const protectedQuestionRouter = createProtectedRouter()
             return savedQuestion
         }
     })
-    .mutation('answer', {
-        input: z
-            .object({
-                
-            }),
+    .mutation('create_answer', {
+        input: z.object({
+            text: z.string(),
+            questionId: z.number(),
+            authorId: z.string()
+        }),
         async resolve({ ctx, input }) {
-            return 'hi'
+            return await ctx.prisma.answer.create({
+                data: {
+                    text: input.text,
+                    question: { connect: { id: input.questionId } },
+                    author: { connect: { id: input.authorId } }
+                }
+            })
         }
     })
-    .mutation('comment', {
-        input: z
-            .object({
-                text: z.string(),
-                questionId: z.number(),
-                authorId: z.string()
-            }),
+    .mutation('create_comment', {
+        input: z.object({
+            text: z.string(),
+            questionId: z.number(),
+            authorId: z.string()
+        }),
+        async resolve({ ctx, input }) {
+            return await ctx.prisma.comment.create({
+                data: {
+                    text: input.text,
+                    question: { connect: { id: input.questionId } },
+                    author: { connect: { id: input.authorId } }
+                }
+            })
+        }
+    })
+    .mutation('create_comment_to_answer', {
+        input: z.object({
+            text: z.string(),
+            answerId: z.number(),
+            authorId: z.string()
+        }),
         async resolve({ ctx, input }) {
             console.log(input)
-            return 'hi'
+            return await ctx.prisma.comment.create({
+                data: {
+                    text: input.text,
+                    answer: { connect: { id: input.answerId } },
+                    author: { connect: { id: input.authorId } }
+                }
+            })
         }
     })

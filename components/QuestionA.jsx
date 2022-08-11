@@ -1,11 +1,34 @@
-
+//
+import { useState } from 'react'
+//
+import { trpc } from '../utils/trpc'
 //
 import styles from '../styles/components/QuestionA.module.css'
 
 
 
 const QuestionA = ({ user, answer }) => {
-    console.log(answer)
+    const [comment, setComment] = useState('')
+
+
+
+    const answerMutate = trpc.useMutation(['question_protected.create_comment_to_answer'])
+
+
+    const handleKeyDown = (event) => {
+
+        if (event.key === 'Enter') {
+            answerMutate.mutate({
+                text: comment,
+                answerId: answer.id,
+                authorId: user.id
+            })
+
+            
+            setComment('')
+        }
+    }
+
     return (
         <div className={styles.question_a}>
             <div className={styles.header}>
@@ -54,6 +77,9 @@ const QuestionA = ({ user, answer }) => {
                         alt="avatar_comment_input"
                     />
                     <input
+                        value={comment}
+                        onChange={e => setComment(e.target.value)}
+                        onKeyDown={handleKeyDown}
                         placeholder='Уточните вопрос'
                         className={styles.input_comment}
                         type="text"

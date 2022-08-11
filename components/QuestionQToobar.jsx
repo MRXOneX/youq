@@ -10,7 +10,7 @@ import styles from '../styles/components/QuestionQToolbar.module.css'
 
 
 
-const QuestionQToolbar = () => {
+const QuestionQToolbar = ({ authorId, questionId }) => {
 
     const [selectedTab, setSelectedTab] = useState(null)
 
@@ -34,7 +34,7 @@ const QuestionQToolbar = () => {
                     }}
                     onClick={() => onChangeTab({
                         name: 'edit_answer',
-                        component: <EditAnswer />
+                        component: <EditAnswer authorId={authorId} questionId={questionId} />
                     })}
                     className={styles.btn}
                 >
@@ -49,7 +49,7 @@ const QuestionQToolbar = () => {
                     }}
                     onClick={() => onChangeTab({
                         name: 'edit_comment',
-                        component: <EditComment />
+                        component: <EditComment authorId={authorId} questionId={questionId}  />
                     })}
                     className={styles.btn}
                 >

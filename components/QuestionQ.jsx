@@ -7,7 +7,6 @@ import styles from '../styles/components/QuestionQ.module.css'
 
 
 const QuestionQ = ({ question }) => {
-    console.log(question)
     return (
         <div className={styles.question}>
             <div className={styles.header}>

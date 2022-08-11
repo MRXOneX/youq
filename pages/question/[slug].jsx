@@ -7,6 +7,7 @@ import { trpc } from '../../utils/trpc'
 import QuestionA from "../../components/QuestionA"
 import QuestionQ from "../../components/QuestionQ"
 import QuestionQToolbar from "../../components/QuestionQToobar"
+import StillQuestion from '../../components/StillQuestion'
 // layouts
 import PageContainer from '../../layouts/PageContainer'
 
@@ -22,35 +23,40 @@ const Question = () => {
     const { data } = useSession()
 
     const router = useRouter()
-    console.log(router)
 
     const { data: question = null } = trpc.useQuery([
         'question.getOne',
         { id: +router?.query?.slug }
     ])
 
+
     return (
         <PageContainer>
             {question ? (
-                <>
+                <div className={styles.question}>
                     <div className={styles.left}>
                         <QuestionQ question={question} />
-                        <QuestionQToolbar />
+                        <QuestionQToolbar authorId={data.user.id} questionId={question.id} />
                         {question?.answers?.length > 0 && (
                             <>
                                 <span className={styles.title_answers}>
                                     Ответ или решение: {question.answers.length}
                                 </span>
-                                {question.answers.map(answer => (
-                                    <QuestionA user={data?.user} key={answer.id} answer={answer} />
-                                ))}
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                    {question.answers.map(answer => (
+                                        <QuestionA user={data?.user} key={answer.id} answer={answer} />
+                                    ))}
+                                </div>
+                                <StillQuestion />
                             </>
                         )}
                     </div>
                     <div className={styles.right}>
-
+                        <div>
+                            <h4>Новые вопросы</h4>
+                        </div>
                     </div>
-                </>
+                </div>
             ) : (
                 <span>
                     not question

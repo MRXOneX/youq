@@ -37,7 +37,6 @@ const Navbar = () => {
             callbackUrl: 'http://localhost:3000/'
         })
     }
-    console.log(isOpenUser)
 
     const { ref } = useOutside(() => setIsOpenUser(false))
 

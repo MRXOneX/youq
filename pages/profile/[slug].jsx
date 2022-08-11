@@ -31,10 +31,11 @@ const Profile = () => {
 
 
 
+    if (!profile) return null
     
 
     return (
-        <PageContainer>
+        <PageContainer title={`${profile?.name} - youq.pro`}>
             {isLoading ? (
                 <>
                     loading
