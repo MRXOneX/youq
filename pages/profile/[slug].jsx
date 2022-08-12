@@ -22,6 +22,7 @@ const Profile = () => {
         'profile.getOne',
         { id: router?.query?.slug }
     ])
+    console.log(profile)
 
 
     const [menuActive, setMenuActive] = useState({

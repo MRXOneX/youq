@@ -25,6 +25,9 @@ const QuestionQ = ({ question }) => {
                         </span>
                     </div>
                 </div>
+                <span className={styles.rating}>
+                    {question.rating}
+                </span>
             </div>
             <div className={styles.content}>
                 <p className={styles.text}>
