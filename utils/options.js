@@ -23,6 +23,31 @@ export const itemsOptions = [
     { value: 'astronomy', label: 'Астрономия' },
     { value: 'physical_culture', label: 'Физкультура и спорт' }
 ]
+export const itemsOptionsObject = {
+    all: 'Все',
+    mathematics: 'Математика',
+    literature: 'Литература',
+    algebra: 'Алгебра',
+    russian: 'Русский язык',
+    geometry: 'Геометрия',
+    english: 'Английский язык',
+    chemistry: 'Химия',
+    physics: 'Физика',
+    biology: 'Биология',
+    history: 'История',
+    social_studies: 'Обществознание',
+    surrounding_world: 'Окружающий мир',
+    geography: 'География',
+    informatics: 'Информатика',
+    economy: 'Экономика',
+    music: 'Музыка',
+    right: 'Право',
+    french: 'Французский язык',
+    obzh: 'Обж',
+    psychology: 'Психология',
+    astronomy: 'Астрономия',
+    physical_culture: 'Физкультура и спорт'
+}
 
 
 
@@ -33,3 +58,10 @@ export const classesOptions = [
     { value: 'senior', label: '9 - 11 классы' },
     { value: 'college', label: 'Студенческий' }
 ]
+export const classesOptionsObject = {
+    all: 'Все класс',
+    junior: '1 - 4 классы',
+    middle: '5 - 9 классы',
+    senior: '9 - 11 классы',
+    college: 'Студенческий'
+}

@@ -29,6 +29,12 @@ export const protectedQuestionRouter = createProtectedRouter()
             return savedQuestion
         }
     })
+    // .mutation('create_rating', {
+    //     input,
+    //     async resolve({ ctx, input }) {
+
+    //     }
+    // })
     .mutation('create_answer', {
         input: z.object({
             text: z.string(),

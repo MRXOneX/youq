@@ -8,6 +8,7 @@ import QuestionA from "../../components/QuestionA"
 import QuestionQ from "../../components/QuestionQ"
 import QuestionQToolbar from "../../components/QuestionQToobar"
 import StillQuestion from '../../components/StillQuestion'
+import QuestionsNew from "../../components/QuestionsNew"
 // layouts
 import PageContainer from '../../layouts/PageContainer'
 
@@ -31,7 +32,7 @@ const Question = () => {
 
 
     return (
-        <PageContainer>
+        <PageContainer title={`${question?.text} - YouQ`}>
             {question ? (
                 <div className={styles.question}>
                     <div className={styles.left}>
@@ -52,9 +53,7 @@ const Question = () => {
                         )}
                     </div>
                     <div className={styles.right}>
-                        <div>
-                            <h4>Новые вопросы</h4>
-                        </div>
+                        <QuestionsNew />
                     </div>
                 </div>
             ) : (

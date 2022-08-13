@@ -71,7 +71,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 500;
     -webkit-box-orient: vertical;
 }

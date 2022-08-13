@@ -12,7 +12,8 @@ import styles from '../styles/pages/Home.module.css'
 export default function Home() {
 
   const { data: questions = [] } = trpc.useQuery([
-    'question.getAll'
+    'question.getAll',
+    { limit: 30 }
   ])
 
   console.log(questions)

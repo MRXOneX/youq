@@ -53,12 +53,7 @@ const AskQuestion = () => {
         if (question?.isSuccess) {
             toast.success('Вопрос создан!', {
                 position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
+                autoClose: 2000
             });
             setValue('')
             setSelectedClass(newClassesOptions[0])
