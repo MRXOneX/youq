@@ -52,6 +52,8 @@ model User {
   sessions      Session[]
 
   isAdmin Boolean @default(false)
+  isConfirmed Boolean @default(false)
+  level Level @default(beginner)
 
   questions Question[]
   answers   Answer[]
@@ -172,4 +174,8 @@ enum Class {
   middle
   senior
   college
+}
+
+enum Level {
+  beginner
 }

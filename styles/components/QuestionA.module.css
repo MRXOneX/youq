@@ -51,6 +51,7 @@
 }
 .level_info {
     color: #494949;
+    font-weight: 600;
 }
 
 
@@ -73,7 +74,6 @@
 .footer {
     display: flex;
     flex-direction: column;
-
     margin-top: 15px;
     padding-top: 17px;
     border-top: 1px solid hsl(0, 0%, 90%);

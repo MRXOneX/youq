@@ -1,3 +1,4 @@
+import moment from 'moment'
 //
 import styles from '../styles/components/QuestionQ.module.css'
 
@@ -21,7 +22,7 @@ const QuestionQ = ({ question }) => {
                             {question?.author?.name}
                         </span>
                         <span className={styles.hours_item}>
-                            2 часа назад
+                            {moment(String(question.createdAt)).fromNow()}
                         </span>
                     </div>
                 </div>

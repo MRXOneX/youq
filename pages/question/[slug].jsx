@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/react"
 //
 import { useRouter } from "next/router"
+import Image from "next/image"
 //
 import { trpc } from '../../utils/trpc'
 // components
@@ -11,7 +12,8 @@ import StillQuestion from '../../components/StillQuestion'
 import QuestionsNew from "../../components/QuestionsNew"
 // layouts
 import PageContainer from '../../layouts/PageContainer'
-
+// icons
+import loading from '../../utils/gifs/loading.gif'
 //
 import styles from '../../styles/pages/Question.module.css'
 
@@ -25,7 +27,7 @@ const Question = () => {
 
     const router = useRouter()
 
-    const { data: question = null } = trpc.useQuery([
+    const { data: question = null, isLoading } = trpc.useQuery([
         'question.getOne',
         { id: +router?.query?.slug }
     ])
@@ -33,7 +35,9 @@ const Question = () => {
 
     return (
         <PageContainer title={`${question?.text} - YouQ`}>
-            {question ? (
+            {isLoading ? (
+               <Image src={loading} />
+            ) : (
                 <div className={styles.question}>
                     <div className={styles.left}>
                         <QuestionQ question={question} />
@@ -56,10 +60,6 @@ const Question = () => {
                         <QuestionsNew />
                     </div>
                 </div>
-            ) : (
-                <span>
-                    not question
-                </span>
             )}
         </PageContainer>
     )

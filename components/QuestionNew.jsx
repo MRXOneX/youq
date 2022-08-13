@@ -1,6 +1,8 @@
 //
 import { useRouter } from 'next/router'
 //
+import moment from 'moment'
+//
 import { itemsOptionsObject, classesOptionsObject } from '../utils/options'
 //
 import styles from '../styles/components/QuestionsNew.module.css'
@@ -12,7 +14,6 @@ const QuestionNew = ({ question }) => {
 
     const router = useRouter()
 
-    const createdAt = question.createdAt.toISOString()
 
     return (
         <div className={styles.question_new}>
@@ -28,7 +29,7 @@ const QuestionNew = ({ question }) => {
                 {question.text}
             </p>
             <span className={styles.created_date}>
-                {String(new Date(createdAt))}
+                {moment(String(question.createdAt)).fromNow()}
             </span>
         </div>
     )

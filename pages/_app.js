@@ -2,7 +2,12 @@ import { withTRPC } from '@trpc/next'
 import superjson from 'superjson'
 import { SessionProvider } from 'next-auth/react'
 //
+import moment from 'moment'
+//
 import { ToastContainer } from 'react-toastify';
+//
+import 'moment/locale/ru'
+moment.locale('ru')
 // components
 import AuthWrapper from '../components/AuthWrapper'
 //

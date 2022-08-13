@@ -1,6 +1,8 @@
 //
 import { useRouter } from 'next/router'
 //
+import moment from 'moment'
+//
 import styles from '../styles/components/QuestionItem.module.css'
 
 
@@ -27,9 +29,11 @@ const QuestionItem = ({ question }) => {
                         <span className={styles.name}>
                             {question?.author?.name}
                         </span>
-                        <span className={styles.hours_item}>
-                            hours and item
-                        </span>
+                        <div className={styles.hours_item}>
+                            <span>
+                                {moment(String(question.createdAt)).fromNow()}
+                            </span>
+                        </div>
                     </div>
                 </div>
                 <div>
