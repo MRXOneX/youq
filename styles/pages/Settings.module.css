@@ -1,0 +1,34 @@
+.settings {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.left {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 630px;
+}
+
+
+
+.right {
+    display: flex;
+    flex-direction: column;
+
+    width: 310px;
+    height: 100%;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .left {
+        width: 100%;
+        align-items: center;
+    }
+    .right {
+        display: none;
+    }
+}

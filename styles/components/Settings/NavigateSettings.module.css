@@ -1,0 +1,43 @@
+.navigate_settings {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 0 5px 0px;
+
+    border-radius: 10px;
+
+    width: 310px;
+    max-height: auto;
+
+    padding: 15px 0 15px 0;
+
+    background-color: white;
+}
+
+
+/* HEADER */
+.header {
+    padding: 0 20px 15px 15px;
+}
+
+/* CONTENT */
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigate_elem {
+    padding: 10px 20px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+}
+.navigate_elem:hover {
+    background: #eff5fe;
+    transition: .4s;
+}
+.title {
+    font-size: 18px;
+    font-weight: 600;
+
+    margin-left: 10px;
+}

@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 //
 import { trpc } from "../../utils/trpc"
 /// components
-import UserInfo from "../../components/Profile/UserInfo"
+import ProfileInfo from "../../components/Profile/ProfileInfo"
 import MenuInfo from '../../components/Profile/MenuInfo'
 import ProfileAnswers from "../../components/Profile/ProfileAnswers"
 // layouts
@@ -48,7 +48,7 @@ const Profile = () => {
                     {profile ? (
                         <div className={styles.profile}>
                             <div className={styles.left}>
-                                <UserInfo profile={profile} />
+                                <ProfileInfo profile={profile} />
                             </div>
                             <div className={styles.right}>
                                 <MenuInfo 
