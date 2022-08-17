@@ -51,9 +51,11 @@ model User {
   accounts      Account[]
   sessions      Session[]
 
+  role Role @default(student)
   isAdmin Boolean @default(false)
   isConfirmed Boolean @default(false)
   level Level @default(beginner)
+  gender Gender?
 
   questions Question[]
   answers   Answer[]
@@ -140,6 +142,19 @@ model Rating {
   
   answer     Answer?   @relation(fields: [answerId], references: [id])
   answerId   Int?
+}
+
+
+enum Role {
+  student
+  teacher
+  parent
+  othen
+}
+
+enum Gender {
+  man
+  woman
 }
 
 enum Item {

@@ -32,7 +32,7 @@
     align-items: center;
 }
 .navigate_elem:hover {
-    background: #eff5fe;
+    background: rgb(229 239 255);
     transition: .4s;
 }
 .title {

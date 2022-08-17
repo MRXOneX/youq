@@ -25,8 +25,8 @@
 
 @media screen and (max-width: 1000px) {
     .left {
+        display: block;
         width: 100%;
-        align-items: center;
     }
     .right {
         display: none;

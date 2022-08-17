@@ -3,10 +3,51 @@
 
     border-radius: 10px;
 
-    width: 660px;
+    max-width: 660px;
     max-height: auto;
 
-    padding: 15px 0 15px 0;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 
     background-color: white;
 }
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+}
+.header_back {
+    display: flex;
+    align-items: center;
+
+    color: #232323;
+
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 5px;
+
+    background: none;
+    outline: none;
+    border: none;
+}
+.name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.header_back:hover {
+    transition: .4s;
+    background: rgb(236, 242, 252);
+}
+
+/* CONTENT */
+
+.content {
+    padding: 20px 0 0 0;
+}
+

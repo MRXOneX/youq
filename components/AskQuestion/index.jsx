@@ -36,13 +36,12 @@ const AskQuestion = () => {
 
     const question = trpc.useMutation(['question_protected.create']);
 
-    const authorId = data?.user?.id
 
-    console.log(question)
+
     const createQuestion = () => {
         question.mutate({
             text: value,
-            authorId: authorId,
+            authorId:  data?.user?.id,
             item: selectedItem.value,
             class: selectedClass.value
         })
@@ -62,7 +61,7 @@ const AskQuestion = () => {
                 router.push(`/question/${question.data.id}`)
             }
         }
-    }, [question.isSuccess])
+    }, [question.isSuccess, question?.data?.id, router])
 
 
     return (

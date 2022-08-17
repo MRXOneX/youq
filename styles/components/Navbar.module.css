@@ -181,3 +181,38 @@
 
     transition: .5s;
 }
+
+.title {
+    display: none;
+    font-size: 24px;
+    font-weight: 600;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 620px) {
+    .navbar {
+        height: 55px;
+        display: none;
+    }
+    .title {
+        display: block;
+    }
+
+    .logo {
+        display: none;
+    }
+    .menu_create {
+        display: none;
+    }
+    .user {
+        display: none;
+    }
+    .login {
+        display: none;
+    }
+}

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 //
 import { useRouter } from 'next/router'
 //
@@ -19,11 +20,13 @@ const QuestionItem = ({ question }) => {
         <div className={styles.question_item}>
             <div className={styles.header}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img
+                    <Image
+                        height={33}
+                        width={33}
                         onClick={() => router.push(`/profile/${question?.author?.id}`)}
                         className={styles.avatar}
                         src={question?.author?.image}
-                        alt=""
+                        alt="avatar"
                     />
                     <div className={styles.info}>
                         <span className={styles.name}>

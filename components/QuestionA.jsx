@@ -1,6 +1,8 @@
 //
 import { useState } from 'react'
 //
+import Image from 'next/image'
+//
 import { trpc } from '../utils/trpc'
 //
 import styles from '../styles/components/QuestionA.module.css'
@@ -33,7 +35,9 @@ const QuestionA = ({ user, answer }) => {
         <div className={styles.question_a}>
             <div className={styles.header}>
                 <div style={{ display: 'flex' }}>
-                    <img
+                    <Image
+                        width={40}
+                        height={40}
                         className={styles.avatar}
                         src={answer?.author?.image}
                         alt="avatar"
@@ -57,8 +61,10 @@ const QuestionA = ({ user, answer }) => {
                 {answer?.comments?.length > 0 && (
                     <div className={styles.comments}>
                         {answer?.comments?.map(comment => (
-                            <div className={styles.comment}>
-                                <img
+                            <div key={comment.id} className={styles.comment}>
+                                <Image
+                                    width={30}
+                                    height={30}
                                     className={styles.comment_avatar}
                                     src={comment?.author?.image}
                                     alt="comment_avatar"
@@ -71,7 +77,9 @@ const QuestionA = ({ user, answer }) => {
                     </div>
                 )}
                 <div className={styles.input_add_comment}>
-                    <img
+                    <Image
+                        width={30}
+                        height={30}
                         className={styles.input_avatar}
                         src={user?.image}
                         alt="avatar_comment_input"

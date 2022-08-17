@@ -8,7 +8,7 @@ import Google from '../components/Icons/Google'
 //
 import styles from '../styles/pages/Auth.module.css'
 
-const auth = () => {
+const Auth = () => {
 
     const formik = useFormik({
         initialValues: {
@@ -83,4 +83,4 @@ const auth = () => {
     )
 }
 
-export default auth
+export default Auth

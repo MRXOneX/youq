@@ -21,7 +21,7 @@ const NavigateSettings = () => {
                 <div
                     onClick={() => router.push('/settings/profile')}
                     style={{
-                        background: router.pathname === '/settings/profile' && '#eff5fe'
+                        background: router.pathname === '/settings/profile' && 'rgb(229 239 255)'
                     }}
                     className={styles.navigate_elem}
                 >

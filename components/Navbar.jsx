@@ -2,6 +2,8 @@ import { useState } from 'react'
 //
 import Link from 'next/link'
 //
+import Image from 'next/image'
+//
 import { useRouter } from 'next/router'
 //
 import { signIn, useSession, signOut } from 'next-auth/react'
@@ -47,6 +49,9 @@ const Navbar = () => {
                     YouQ
                 </Link>
             </span>
+            <span className={styles.title}>
+                Profile
+            </span>
             <div className={styles.right}>
                 {status === 'authenticated' && (
                     <>
@@ -61,7 +66,13 @@ const Navbar = () => {
                 {status === 'authenticated' ? (
                     <div style={{ position: 'relative' }}>
                         <div onClick={() => setIsOpenUser(true)} className={styles.user}>
-                            <img src={data.user?.image} className={styles.avatar} />
+                            <Image 
+                                width={32}
+                                height={32}
+                                alt='avatar' 
+                                src={data.user?.image} 
+                                className={styles.avatar} 
+                            />
                             <div className={styles.name_role}>
                                 <span className={styles.name}>
                                     {data.user?.name}

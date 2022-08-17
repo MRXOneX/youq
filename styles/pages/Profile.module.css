@@ -4,9 +4,34 @@
 }
 
 .left {
-    width: 360px;
+    width: 330px;
 }
 
 .right {
-    width: 580px;
+    width: 620px;
+}
+
+
+.menu {
+    display: none;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+    .left {
+        width: 100%;
+    }
+    .right {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
 }

@@ -1,5 +1,7 @@
 import moment from 'moment'
 //
+import Image from 'next/image'
+//
 import styles from '../styles/components/QuestionQ.module.css'
 
 
@@ -12,10 +14,12 @@ const QuestionQ = ({ question }) => {
         <div className={styles.question}>
             <div className={styles.header}>
                 <div style={{ display: 'flex' }}>
-                    <img
+                    <Image
+                        width={40}
+                        height={40}
                         className={styles.avatar}
                         src={question?.author?.image}
-                        alt=""
+                        alt="avatar"
                     />
                     <div className={styles.info}>
                         <span className={styles.name}>
@@ -39,7 +43,9 @@ const QuestionQ = ({ question }) => {
                 <div className={styles.footer}>
                     {question.comments.map(comment => (
                         <div key={comment.id} className={styles.comment}>
-                            <img
+                            <Image
+                                width={30}
+                                height={30}
                                 className={styles.comment_avatar}
                                 src={comment?.author?.image}
                                 alt="avatar"

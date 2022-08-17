@@ -22,7 +22,6 @@ const Profile = () => {
         'profile.getOne',
         { id: router?.query?.slug }
     ])
-    console.log(profile)
 
 
     const [menuActive, setMenuActive] = useState({
@@ -49,10 +48,12 @@ const Profile = () => {
                         <div className={styles.profile}>
                             <div className={styles.left}>
                                 <ProfileInfo profile={profile} />
+                                <div className={styles.menu}>
+                                    <ProfileAnswers />
+                                </div>
                             </div>
                             <div className={styles.right}>
                                 <MenuInfo 
-                                    comments={profile.comments} 
                                     questions={profile.questions} 
                                     answers={profile.answers} 
 

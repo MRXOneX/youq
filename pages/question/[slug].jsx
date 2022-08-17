@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/react"
 //
 import { useRouter } from "next/router"
+//
 import Image from "next/image"
 //
 import { trpc } from '../../utils/trpc'
@@ -36,7 +37,7 @@ const Question = () => {
     return (
         <PageContainer title={`${question?.text} - YouQ`}>
             {isLoading ? (
-               <Image src={loading} />
+               <Image src={loading} alt="loading" />
             ) : (
                 <div className={styles.question}>
                     <div className={styles.left}>
