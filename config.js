@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 const api_host = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'https://youq.vercel.app/api',
 })
 
 
