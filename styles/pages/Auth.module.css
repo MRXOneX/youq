@@ -137,3 +137,15 @@
     outline: none;
     cursor: pointer;
 }
+
+
+
+@media screen and (max-width: 1000px) {
+    .wrapper_logo {
+        display: none;
+    }
+
+    .login_register {
+        width: 100%;
+    }
+}

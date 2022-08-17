@@ -32,7 +32,7 @@ export default withTRPC({
   config({ ctx }) {
 
 
-    const url = 'https://youq.vercel.app/api/trpc'
+    const url = 'http://localhost:3000/api/trpc'
 
     return {
       url,

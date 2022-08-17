@@ -196,8 +196,8 @@
 
 @media screen and (max-width: 620px) {
     .navbar {
-        height: 55px;
-        display: none;
+        height: 50px;
+        /* display: none; */
     }
     .title {
         display: block;

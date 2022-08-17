@@ -9,7 +9,9 @@
     flex-direction: column;
 
     height: 100%;
-    width: 630px;
+    max-width: 630px;
+
+    margin: 0 auto;
 }
 .questions {
     padding: 55px 0 0 0;
@@ -27,4 +29,19 @@
 
     width: 310px;
     height: 100%;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .questions {
+        padding: 5px 0 0 0;
+    }
+    .left {
+        width: 100%;
+    }
+    .right {
+        display: none;
+    }
+
 }

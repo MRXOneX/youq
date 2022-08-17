@@ -1,6 +1,7 @@
 import Head from 'next/head'
 //
 import Navbar from '../components/Navbar'
+import NavigateMobile from '../components/NavigateMobile'
 //
 import styles from '../styles/layouts/PageContainer.module.css'
 
@@ -22,6 +23,7 @@ const PageContainer = ({
             <div style={style} className={styles.content}>
                 {children}
             </div>
+            <NavigateMobile />
         </div>
     )
 }

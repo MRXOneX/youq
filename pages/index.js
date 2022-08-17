@@ -23,7 +23,7 @@ export default function Home() {
     <PageContainer>
       <div className={styles.home}>
         <div className={styles.left}>
-          <SearchQuestion />
+          {/* <SearchQuestion /> */}
           <div className={styles.questions}>
             {questions.map(question => (
               <QuestionItem key={question.id} question={question} />
