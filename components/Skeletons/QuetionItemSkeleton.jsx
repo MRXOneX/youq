@@ -7,7 +7,7 @@ const QuetionItemSkeleton = () => {
         <ContentLoader
             speed={2}
             width='100%'
-            height="170px"
+            height="auto"
             viewBox="0 0 340 84"
             backgroundColor="#ededed"
             foregroundColor="#dad7d7"
