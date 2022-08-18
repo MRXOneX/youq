@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
 
-    width: 630px;
+    max-width: 630px;
     height: 60px;
 
     padding: 10px 14px;
@@ -31,13 +31,14 @@
     font-weight: 500;
     font-size: 16px;
 }
+
 .search_input:focus {
     padding: 0 11px;
 
     border: 2px solid #2684ff;
 }
 
-.ask_question{
+.ask_question {
     height: 100%;
 
     border: none;
@@ -58,4 +59,21 @@
     transition: .5s;
 
     background-color: #DEEBFF;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+
+    .search_question {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+
+
+    .search_question {
+        display: none;
+    }
 }

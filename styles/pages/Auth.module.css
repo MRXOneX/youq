@@ -1,5 +1,6 @@
 .wrapper_auth {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +16,6 @@
     display: flex;
 
     padding: 20px;
-    margin-top: 50px;
 
     background-color: white;
 }
@@ -72,7 +72,7 @@
 
 
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
 }
 .input:not(:first-child) {
     margin-top: 20px;
@@ -139,13 +139,20 @@
 }
 
 
-
-@media screen and (max-width: 1000px) {
+@media screen  and (max-width: 620px){
     .wrapper_logo {
         display: none;
     }
-
     .login_register {
         width: 100%;
     }
+    .header {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+
+
 }
