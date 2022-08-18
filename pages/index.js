@@ -1,3 +1,5 @@
+import Image from 'next/image'
+//
 import FiltredQuestion from '../components/FiltredQuestion'
 import QuestionItem from '../components/QuestionItem'
 import SearchQuestion from '../components/SearchQuestion'
@@ -7,6 +9,8 @@ import QuetionItemSkeleton from '../components/Skeletons/QuetionItemSkeleton'
 import PageContainer from '../layouts/PageContainer'
 //
 import { trpc } from '../utils/trpc'
+//
+import loading from '../utils/gifs/loading.gif'
 //
 import styles from '../styles/pages/Home.module.css'
 
@@ -29,10 +33,20 @@ export default function Home() {
           <div className={styles.questions}>
             {status === 'loading' && (
               <>
-                <QuetionItemSkeleton />
-                <QuetionItemSkeleton />
-                <QuetionItemSkeleton />
-                <QuetionItemSkeleton />
+                <div className={styles.question_skeleton_loading}>
+                  <QuetionItemSkeleton />
+                  <QuetionItemSkeleton />
+                  <QuetionItemSkeleton />
+                  <QuetionItemSkeleton />
+                </div>
+                <div className={styles.question_loading}>
+                  <Image 
+                    objectFit='contain' 
+                    height={150} 
+                    src={loading} 
+                    alt="loading"
+                  />
+                </div>
               </>
             )}
             {status === 'success' &&
