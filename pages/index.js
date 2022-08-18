@@ -1,6 +1,9 @@
 import FiltredQuestion from '../components/FiltredQuestion'
 import QuestionItem from '../components/QuestionItem'
 import SearchQuestion from '../components/SearchQuestion'
+// components/Skeleton
+import QuetionItemSkeleton from '../components/Skeletons/QuetionItemSkeleton'
+// layouts
 import PageContainer from '../layouts/PageContainer'
 //
 import { trpc } from '../utils/trpc'
@@ -11,12 +14,11 @@ import styles from '../styles/pages/Home.module.css'
 
 export default function Home() {
 
-  const { data: questions = [] } = trpc.useQuery([
+  const { data: questions = [], status } = trpc.useQuery([
     'question.getAll',
     { limit: 30 }
   ])
 
-  console.log(questions)
 
 
   return (
@@ -25,9 +27,18 @@ export default function Home() {
         <div className={styles.left}>
           <SearchQuestion />
           <div className={styles.questions}>
-            {questions.map(question => (
-              <QuestionItem key={question.id} question={question} />
-            ))}
+            {status === 'loading' && (
+              <>
+                <QuetionItemSkeleton />
+                <QuetionItemSkeleton />
+                <QuetionItemSkeleton />
+                <QuetionItemSkeleton />
+              </>
+            )}
+            {status === 'success' &&
+              questions.map(question => (
+                <QuestionItem key={question.id} question={question} />
+              ))}
           </div>
         </div>
         <div className={styles.right}>
