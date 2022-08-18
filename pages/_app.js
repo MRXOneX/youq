@@ -14,6 +14,8 @@ import AuthWrapper from '../components/AuthWrapper'
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/globals.css'
 
+
+
 function MyApp({ Component, pageProps }) {
 
 
@@ -37,7 +39,7 @@ export default withTRPC({
   config({ ctx }) {
     
     
-    const url = `${getBaseUrl()}/api/trpc`
+    const url = `https://www.youq.org/api/trpc`
 
     return {
       url,
