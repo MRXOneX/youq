@@ -65,7 +65,7 @@ const Navbar = () => {
                 )}
                 {status === 'authenticated' ? (
                     <div style={{ position: 'relative' }}>
-                        <div onClick={() => setIsOpenUser(true)} className={styles.user}>
+                        <div onClick={() => handleSignOut()} className={styles.user}>
                             <Image 
                                 width={32}
                                 height={32}

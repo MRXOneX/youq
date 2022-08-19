@@ -42,7 +42,9 @@ const Question = () => {
                 <div className={styles.question}>
                     <div className={styles.left}>
                         <QuestionQ question={question} />
-                        <QuestionQToolbar authorId={data.user.id} questionId={question.id} />
+                        {data?.user && (
+                            <QuestionQToolbar authorId={data?.user?.id} questionId={question.id} />
+                        )}
                         {question?.answers?.length > 0 && (
                             <>
                                 <span className={styles.title_answers}>
