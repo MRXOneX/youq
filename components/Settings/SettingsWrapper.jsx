@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 //
 import Image from 'next/image'
 //
-import back from '../../utils/svg/back.svg'
+import Back from '../../utils/svg/back.svg'
 //
 import styles from '../../styles/components/Settings/Settings.module.css'
 
@@ -21,12 +21,10 @@ const SettingsWrapper = ({ children }) => {
                     onClick={() => router.push(`/profile/${data?.user?.id}`)}
                     className={styles.header_back}
                 >
-                    <Image 
+                    <Back 
                         height={18}
                         width={18}
-                        className={styles.img_back} 
-                        src={back} 
-                        alt="to profile"
+                        fill="#232323"
                     />
                     <span className={styles.name}>
                         {data?.user?.name}

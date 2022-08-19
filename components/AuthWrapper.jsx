@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react"
 import Image from "next/image"
 //
-import logo from '../utils/svg/youq-logo.svg'
+import Logo from '../utils/svg/youq-logo.svg'
 import loading from '../utils/gifs/loading.gif'
 
 
@@ -18,8 +18,7 @@ const AuthWrapper = ({ children }) => {
             justifyContent: 'center',
             background: 'white'
         }}>
-            <Image height={50} src={logo} alt="logo" />
-            <Image  src={loading} alt="loading" />
+            <Image height={200} objectFit='contain' src={loading} alt="loading" />
         </div>
     )
     // font-weight: 900;

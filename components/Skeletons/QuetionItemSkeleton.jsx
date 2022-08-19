@@ -7,7 +7,6 @@ const QuetionItemSkeleton = () => {
         <ContentLoader
             speed={2}
             width='100%'
-            height="auto"
             style={{ marginTop: '10px' }}
             viewBox="0 0 340 84"
             backgroundColor="#ededed"
