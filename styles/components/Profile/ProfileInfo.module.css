@@ -114,6 +114,15 @@
     justify-content: space-evenly;
 }
 
+@media screen and (max-width: 620px) {
+
+    .level {
+        font-size: 17px;
+    }
+    .name {
+        font-size: 17px;
+    }
+}
 
 @media screen and (max-width: 1000px) {
 
