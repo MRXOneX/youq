@@ -50,7 +50,7 @@ const Question = () => {
                                 <span className={styles.title_answers}>
                                     Ответ или решение: {question.answers.length}
                                 </span>
-                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                                     {question.answers.map(answer => (
                                         <QuestionA user={data?.user} key={answer.id} answer={answer} />
                                     ))}
@@ -58,6 +58,7 @@ const Question = () => {
                                 <StillQuestion />
                             </>
                         )}
+                        <div style={{ paddingTop: '80px' }} />
                     </div>
                     <div className={styles.right}>
                         <QuestionsNew />

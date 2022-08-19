@@ -43,7 +43,7 @@
 
     padding-left: 10px;
 
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .name {
@@ -68,7 +68,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -104,4 +104,17 @@
 
     background-color: #4971FF;
     color: white;
+}
+
+
+
+@media screen and (max-width: 620px) {
+    .text {
+        font-size: 16px;
+    }
+
+    .answer {
+        padding: 3px 6px;
+        font-size: 16px;
+    }
 }

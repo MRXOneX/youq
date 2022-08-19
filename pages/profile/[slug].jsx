@@ -51,6 +51,7 @@ const Profile = () => {
                                 <div className={styles.menu}>
                                     <ProfileAnswers />
                                 </div>
+                                <div style={{ paddingTop: '80px' }} />
                             </div>
                             <div className={styles.right}>
                                 <MenuInfo 

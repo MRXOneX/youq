@@ -53,6 +53,7 @@ export default function Home() {
               questions.map(question => (
                 <QuestionItem key={question.id} question={question} />
               ))}
+            <div style={{ paddingTop: '80px' }} />
           </div>
         </div>
         <div className={styles.right}>

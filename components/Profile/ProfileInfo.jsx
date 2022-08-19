@@ -18,8 +18,8 @@ const ProfileInfo = ({ profile }) => {
         <div className={styles.profile_info}>
             <div className={styles.header}>
                 <Image 
-                    height={52} 
-                    width={52} 
+                    height={46} 
+                    width={46} 
                     className={styles.avatar} 
                     src={profile?.image} 
                     alt="avatar" 
