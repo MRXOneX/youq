@@ -15,8 +15,8 @@ const QuestionQ = ({ question }) => {
             <div className={styles.header}>
                 <div style={{ display: 'flex' }}>
                     <Image
-                        width={40}
-                        height={40}
+                        width={35}
+                        height={35}
                         className={styles.avatar}
                         src={question?.author?.image}
                         alt="avatar"
