@@ -38,7 +38,7 @@ const QuestionQToolbar = ({ authorId, questionId }) => {
                     })}
                     className={styles.btn}
                 >
-                    <RegularAnswer size={22} color="#4971FF" />
+                    <RegularAnswer size={20} color="#4971FF" />
                     <span className={styles.btn_name}>
                         Ответить
                     </span>
@@ -53,7 +53,7 @@ const QuestionQToolbar = ({ authorId, questionId }) => {
                     })}
                     className={styles.btn}
                 >
-                    <QuestionComment size={22} color="#4971FF" />
+                    <QuestionComment size={20} color="#4971FF" />
                     <span className={styles.btn_name}>
                         Уточнить
                     </span>

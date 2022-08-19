@@ -42,16 +42,16 @@
 
     line-height: 20px;
 
-    font-size: 18px;
+    font-size: 16px;
 }
 .name {
     color: #232323;
 
-    font-weight: 700;
+    font-weight: 600;
 }
 .level_info {
     color: #494949;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 
@@ -64,7 +64,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 500;
     -webkit-box-orient: vertical;
 }
@@ -105,7 +105,7 @@
 .comment_text {
     margin-left: 10px;
 
-    font-size: 18px;
+    font-size: 17px;
 
 
     overflow-wrap: anywhere;
@@ -141,4 +141,11 @@
 .input_comment:focus {
     border: 2px solid #2684ff;
     padding: 4px 12px;
+}
+
+
+@media screen and (max-width: 620px) {
+    .text {
+        /* font-size: 17px; */
+    }
 }
