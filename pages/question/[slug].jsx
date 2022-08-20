@@ -11,6 +11,8 @@ import QuestionQ from "../../components/QuestionQ"
 import QuestionQToolbar from "../../components/QuestionQToobar"
 import StillQuestion from '../../components/StillQuestion'
 import QuestionsNew from "../../components/QuestionsNew"
+// components/skeleton
+import QuestionQSkeleton from "../../components/Skeletons/QuestionQSkeleton"
 // layouts
 import PageContainer from '../../layouts/PageContainer'
 // icons
@@ -28,7 +30,7 @@ const Question = () => {
 
     const router = useRouter()
 
-    const { data: question = null, isLoading } = trpc.useQuery([
+    const { data: question = null, status } = trpc.useQuery([
         'question.getOne',
         { id: +router?.query?.slug }
     ])
@@ -36,35 +38,42 @@ const Question = () => {
 
     return (
         <PageContainer title={`${question?.text} - YouQ`}>
-            {isLoading ? (
-               <Image src={loading} alt="loading" />
-            ) : (
-                <div className={styles.question}>
-                    <div className={styles.left}>
-                        <QuestionQ question={question} />
-                        {data?.user && (
-                            <QuestionQToolbar authorId={data?.user?.id} questionId={question.id} />
-                        )}
-                        {question?.answers?.length > 0 && (
-                            <>
-                                <span className={styles.title_answers}>
-                                    Ответ или решение: {question.answers.length}
-                                </span>
-                                <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                                    {question.answers.map(answer => (
-                                        <QuestionA user={data?.user} key={answer.id} answer={answer} />
-                                    ))}
-                                </div>
-                                <StillQuestion />
-                            </>
-                        )}
-                        <div style={{ paddingTop: '80px' }} />
-                    </div>
+            <div className={styles.question}>
+                <div className={styles.left}>
+                    {status === 'loading' && (
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>
+                            <Image height={150} objectFit="contain" src={loading} />
+                        </div>
+                    )}
+                    {status === 'success' && (
+                        <>
+                            <QuestionQ question={question} />
+                            {data?.user && (
+                                <QuestionQToolbar authorId={data?.user?.id} questionId={question.id} />
+                            )}
+                            {question?.answers?.length > 0 && (
+                                <>
+                                    <span className={styles.title_answers}>
+                                        Ответ или решение: {question.answers.length}
+                                    </span>
+                                    <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+                                        {question.answers.map(answer => (
+                                            <QuestionA user={data?.user} key={answer.id} answer={answer} />
+                                        ))}
+                                    </div>
+                                    <StillQuestion />
+                                </>
+                            )}
+                        </>
+                    )}
+                    <div style={{ paddingTop: '80px' }} />
+                </div>
+                {status === 'success' && (
                     <div className={styles.right}>
                         <QuestionsNew />
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </PageContainer>
     )
 }
