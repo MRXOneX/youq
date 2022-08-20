@@ -1,9 +1,12 @@
+import { memo } from 'react'
+//
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 //
 import Image from 'next/image'
 // utils
 import role from '../../utils/role'
+import level from '../../utils/level'
 //
 import styles from '../../styles/components/Profile/ProfileInfo.module.css'
 
@@ -29,7 +32,7 @@ const ProfileInfo = ({ profile }) => {
                         {profile?.name}
                     </span>
                     <span className={styles.level}>
-                        {profile?.isAdmin ? "Admin" : "User"}
+                        {level[profile.level]}
                     </span>
                 </div>
             </div>
@@ -68,4 +71,4 @@ const ProfileInfo = ({ profile }) => {
 }
 
 
-export default ProfileInfo
+export default memo(ProfileInfo)

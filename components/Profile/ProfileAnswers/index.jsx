@@ -1,3 +1,4 @@
+import { memo } from 'react'
 //  components
 import ProfileAnswer from '../ProfileAnswer'
 //
@@ -20,4 +21,4 @@ const ProfileAnswers = ({ answers }) => {
     )
 }
 
-export default ProfileAnswers
+export default memo(ProfileAnswers)

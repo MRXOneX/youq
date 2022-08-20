@@ -1,3 +1,5 @@
+import { memo } from 'react'
+//
 import Image from 'next/image'
 //
 import { useRouter } from 'next/router'
@@ -67,4 +69,4 @@ const QuestionItem = ({ question }) => {
 }
 
 
-export default QuestionItem
+export default memo(QuestionItem)

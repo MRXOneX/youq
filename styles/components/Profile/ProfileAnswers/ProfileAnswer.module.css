@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
 
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .time {
@@ -39,7 +39,7 @@
 }
 
 .text {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
 
     cursor: pointer;
@@ -57,4 +57,14 @@
     transition: .4s;
 
     text-decoration: underline;
+}
+
+
+@media screen and (max-width: 620px) {
+    .header {
+        font-size: 16px;
+    }
+    .text {
+        font-size: 16px;
+    }
 }

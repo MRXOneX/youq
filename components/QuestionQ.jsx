@@ -1,3 +1,5 @@
+import { memo } from 'react'
+//
 import moment from 'moment'
 //
 import Image from 'next/image'
@@ -62,4 +64,4 @@ const QuestionQ = ({ question }) => {
 }
 
 
-export default QuestionQ
+export default memo(QuestionQ)

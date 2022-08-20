@@ -5,8 +5,6 @@ import Select from 'react-select'
 import { useSession } from 'next-auth/react'
 //
 import { useRouter } from 'next/router';
-//
-import { toast } from 'react-toastify';
 // utils/options
 import { classesOptions, itemsOptions } from '../../utils/options'
 //
@@ -50,10 +48,6 @@ const AskQuestion = () => {
 
     useEffect(() => {
         if (question?.isSuccess) {
-            toast.success('Вопрос создан!', {
-                position: "top-right",
-                autoClose: 2000
-            });
             setValue('')
             setSelectedClass(newClassesOptions[0])
             setSelectedItem(newItemsOptions[0])

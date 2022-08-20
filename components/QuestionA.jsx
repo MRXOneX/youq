@@ -14,6 +14,7 @@ const QuestionA = ({ user, answer }) => {
 
 
 
+
     const answerMutate = trpc.useMutation(['question_protected.create_comment_to_answer'])
 
 
@@ -26,7 +27,7 @@ const QuestionA = ({ user, answer }) => {
                 authorId: user.id
             })
 
-            
+
             setComment('')
         }
     }
@@ -57,7 +58,13 @@ const QuestionA = ({ user, answer }) => {
                     {answer?.text}
                 </p>
             </div>
-            <div className={styles.footer}>
+            <div 
+                style={user && {
+                    marginTop: '15px',
+                    paddingTop: '17px',
+                    borderTop: '1px solid hsl(0, 0%, 90%)'
+                }}
+                className={styles.footer}>
                 {answer?.comments?.length > 0 && (
                     <div className={styles.comments}>
                         {answer?.comments?.map(comment => (
@@ -76,23 +83,25 @@ const QuestionA = ({ user, answer }) => {
                         ))}
                     </div>
                 )}
-                <div className={styles.input_add_comment}>
-                    <Image
-                        width={30}
-                        height={30}
-                        className={styles.input_avatar}
-                        src={user?.image}
-                        alt="avatar_comment_input"
-                    />
-                    <input
-                        value={comment}
-                        onChange={e => setComment(e.target.value)}
-                        onKeyDown={handleKeyDown}
-                        placeholder='Уточните вопрос'
-                        className={styles.input_comment}
-                        type="text"
-                    />
-                </div>
+                {user && (
+                    <div className={styles.input_add_comment}>
+                        <Image
+                            width={30}
+                            height={30}
+                            className={styles.input_avatar}
+                            src={user?.image}
+                            alt="avatar_comment_input"
+                        />
+                        <input
+                            value={comment}
+                            onChange={e => setComment(e.target.value)}
+                            onKeyDown={handleKeyDown}
+                            placeholder='Уточните вопрос'
+                            className={styles.input_comment}
+                            type="text"
+                        />
+                    </div>
+                )}
             </div>
         </div>
     )
