@@ -11,8 +11,6 @@ import QuestionQ from "../../components/QuestionQ"
 import QuestionQToolbar from "../../components/QuestionQToobar"
 import StillQuestion from '../../components/StillQuestion'
 import QuestionsNew from "../../components/QuestionsNew"
-// components/skeleton
-import QuestionQSkeleton from "../../components/Skeletons/QuestionQSkeleton"
 // layouts
 import PageContainer from '../../layouts/PageContainer'
 // icons
@@ -66,7 +64,7 @@ const Question = () => {
                             )}
                         </>
                     )}
-                    <div style={{ paddingTop: '80px' }} />
+                    <div style={{ paddingTop: '80px', width: '100%' }} />
                 </div>
                 {status === 'success' && (
                     <div className={styles.right}>

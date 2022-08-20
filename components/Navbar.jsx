@@ -50,7 +50,7 @@ const Navbar = () => {
                 </Link>
             </span>
             <span className={styles.title}>
-                Profile
+                Вопросы
             </span>
             <div className={styles.right}>
                 {status === 'authenticated' && (

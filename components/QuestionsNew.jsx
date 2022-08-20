@@ -16,9 +16,9 @@ const QuestionsNew = () => {
 
     return (
         <div className={styles.questions_new}>
-            <h3>
+            <h4>
                 Новые вопросы
-            </h3>
+            </h4>
             <div className={styles.content}>
                 {questions.map(question => (
                     <QuestionNew key={question.id} question={question} />  

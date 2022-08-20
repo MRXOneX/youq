@@ -18,7 +18,7 @@ const QuestionNew = ({ question }) => {
     return (
         <div className={styles.question_new}>
             <div>
-                <span>
+                <span className={styles.item}>
                     {itemsOptionsObject[question.item]}
                 </span>
                 <span style={{ marginLeft: '15px' }} className={styles.created_date}>

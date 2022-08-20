@@ -51,15 +51,17 @@ model User {
   accounts      Account[]
   sessions      Session[]
 
-  role Role @default(student)
-  isAdmin Boolean @default(false)
+  role        Role    @default(student)
+  isAdmin     Boolean @default(false)
   isConfirmed Boolean @default(false)
-  level Level @default(beginner)
-  gender Gender?
+  level       Level   @default(beginner)
+  gender      Gender?
 
   questions Question[]
   answers   Answer[]
   comments  Comment[]
+
+  contacts Contact[]
 
   ratings Rating[]
   rating  Int      @default(0)
@@ -129,21 +131,44 @@ model Comment {
 }
 
 model Rating {
-  id         Int       @id @default(autoincrement())
-  rating Boolean
-  createdAt  DateTime? @default(now())
-  updatedAt  DateTime? @updatedAt
+  id        Int       @id @default(autoincrement())
+  rating    Boolean
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
 
-  user       User?     @relation(fields: [userId], references: [id])
-  userId     String?
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String?
 
   question   Question? @relation(fields: [questionId], references: [id])
   questionId Int?
-  
-  answer     Answer?   @relation(fields: [answerId], references: [id])
-  answerId   Int?
+
+  answer   Answer? @relation(fields: [answerId], references: [id])
+  answerId Int?
 }
 
+model Contact {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  type   ContactType
+  url    String
+
+  user   User?       @relation(fields: [userId], references: [id])
+  userId String?
+}
+
+
+
+// enum
+
+enum ContactType {
+  vk
+  google
+  ok
+  instagram
+}
 
 enum Role {
   student

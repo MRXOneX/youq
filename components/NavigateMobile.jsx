@@ -16,6 +16,22 @@ const NavigateMobile = () => {
 
     const router = useRouter()
 
+    const isUser = () => {
+        if (data?.user?.id) {
+            return `/profile/${data?.user?.id}`
+        }
+
+        return '/auth'
+    }
+
+    const getActiveUser = () => {
+        if (router.asPath === `/profile/${data?.user?.id}`) {
+            return '#4971FF'
+        }
+
+        return '#71716e'
+    }
+
     return (
         <div className={styles.navigate_mobile}>
             <div style={{ height: '100%' }}>
@@ -34,21 +50,19 @@ const NavigateMobile = () => {
                 </button>
             </div>
             <div style={{ height: '100%' }}>
-                <button className={styles.create}>
+                <button onClick={() => router.push('/ask-question')} className={styles.create}>
                     <Plus fill="white" width={28} height={28} />
                 </button>
             </div>
             <div style={{ height: '100%' }}>
-                <button onClick={() => router.push(`/profile/${data?.user?.id}`)} className={styles.user}>
-                    <User fill={
-                        router.pathname === `/profile/${data?.user?.id}` ? '#4971FF' : '#71716e'
-                    } width={22} height={22} />
+                <button onClick={() => router.push(isUser())} className={styles.user}>
+                    <User fill={getActiveUser()} width={22} height={22} />
                     <span 
                         style={{ 
-                            color: router.pathname === `/profile/${data?.user?.id}` ? '#4971FF' : '#71716e'
+                            color: getActiveUser()
                         }}
                         className={styles.user_title}>
-                        Профиль
+                        {data?.user ? 'Профиль' : 'Войти'}
                     </span>
                 </button>
             </div>

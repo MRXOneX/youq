@@ -112,7 +112,9 @@
     flex-direction: column;
     justify-items: center;
 
-    font-weight: 700;
+    font-weight: 600;
+
+    margin-left: 7px;
 
     line-height: 15px;
 }
@@ -133,16 +135,15 @@
     border: none;
 
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 17px;
 
     font-weight: 700;
     font-size: 18px;
     font-family: 'Nunito', sans-serif;
     color: white;
 
-    padding: 5px 20px;
-
-    height: 100%;
+    padding: 10px 20px;
+    height: auto;
 }
 
 .login:hover {

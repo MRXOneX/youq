@@ -10,6 +10,9 @@
     padding: 30px 0 0 0;
 }
 
+.item {
+    font-size: 15px;
+}
 .question_new {
     display: flex;
     flex-direction: column;
@@ -40,7 +43,7 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
@@ -50,4 +53,5 @@
 
 .created_date {
     color: #7f7f7f;
+    font-size: 15px;
 }
