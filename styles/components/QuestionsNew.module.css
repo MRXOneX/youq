@@ -20,7 +20,7 @@
 
     color: rgb(9 21 38 / 85%);
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
 
     border-radius: 15px;
 
@@ -43,7 +43,8 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: 'Nunito';
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }

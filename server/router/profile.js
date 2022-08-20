@@ -17,7 +17,11 @@ export const profileRouter = createRouter()
                     id: input.id,
                 },
                 include: {
-                    answers: true,
+                    answers: {
+                        include: {
+                            question: true
+                        }
+                    },
                     comments: true,
                     questions: true
                 }

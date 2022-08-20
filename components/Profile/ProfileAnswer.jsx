@@ -1,11 +1,18 @@
 //
 import { useRouter } from 'next/router'
+// utils
+import { classesOptionsObject, itemsOptionsObject } from '../../utils/options'
+//
 import styles from '../../styles/components/Profile/ProfileAnswers/ProfileAnswer.module.css'
+
+
 
 
 const ProfileAnswer = ({ answer }) => {
     
     const router = useRouter()
+
+    console.log(answer)
 
     return (
         <div className={styles.profile_answer}>
@@ -14,10 +21,10 @@ const ProfileAnswer = ({ answer }) => {
                     time
                 </span>
                 <span className={styles.item}>
-                    item
+                    {itemsOptionsObject[answer.question.item]}
                 </span>
                 <span className={styles.class}>
-                    class
+                    {classesOptionsObject[answer.question.class]}
                 </span>
             </div>
             <div className={styles.content}>

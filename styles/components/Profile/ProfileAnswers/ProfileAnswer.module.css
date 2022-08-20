@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
 
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .time {
@@ -66,5 +66,9 @@
     }
     .text {
         font-size: 16px;
+    }
+
+    .item,.class {
+        font-size: 15px;
     }
 }
