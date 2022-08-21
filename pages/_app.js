@@ -34,8 +34,8 @@ function getBaseUrl() {
 export default withTRPC({
   config({ ctx }) {
     
-    
-    const url = `https://www.youq.org/api/trpc`
+    // https://www.youq.org
+    const url = `${getBaseUrl()}/api/trpc`
 
     return {
       url,
