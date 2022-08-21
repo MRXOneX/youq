@@ -2,7 +2,7 @@
 .profile_question {
     width: 100%;
 
-    padding: 10px;
+    padding: 15px 5px;
 
 }
 .profile_question:not(:first-child) {

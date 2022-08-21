@@ -56,7 +56,7 @@ const Navbar = () => {
             </span>
             <div className={styles.title}>
                 <button className={styles.title_search}>
-                    <Search width={21} height={21} />
+                    <Search width={23} height={23} />
                 </button>
                 <span>
                     Вопросы
