@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db_push": "npx prisma db push && npx prisma generate",
+    "push": "npx prisma db push && npx prisma generate",
     "git": "git add -A && git commit -m 'update' && git push"
   },
   "dependencies": {
