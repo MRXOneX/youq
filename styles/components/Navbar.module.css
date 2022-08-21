@@ -41,11 +41,13 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     border: none;
     outline: none;
     background: none;
+
+    padding: 0;
 }
 .menu_create:hover {
     transition: .5s;
@@ -187,6 +189,8 @@
 
 .title {
     display: none;
+    align-items: center;
+    justify-content: space-between;
     font-size: 24px;
     font-weight: 600;
 
@@ -194,7 +198,17 @@
 
     text-align: center;
 }
+.title_filter,.title_search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    background: none;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+}
 
 
 @media screen and (max-width: 620px) {
@@ -203,7 +217,7 @@
         /* display: none; */
     }
     .title {
-        display: block;
+        display: flex;
     }
 
     .logo {

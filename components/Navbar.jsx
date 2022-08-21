@@ -11,11 +11,16 @@ import { signIn, useSession, signOut } from 'next-auth/react'
 import useOutside from '../hooks/useOutside'
 // components
 import Dropdown from '../layouts/Dropdown'
+//
+import level from '../utils/level'
 // icons
 import MenuCreate from './Icons/MenuCreate'
 import Exit from './Icons/Exit'
+import Search from '../utils/svg/search.svg'
+import Filter from '../utils/svg/filter.svg'
 //
 import styles from '../styles/components/Navbar.module.css'
+
 
 
 
@@ -49,9 +54,17 @@ const Navbar = () => {
                     YouQ
                 </Link>
             </span>
-            <span className={styles.title}>
-                Вопросы
-            </span>
+            <div className={styles.title}>
+                <button className={styles.title_search}>
+                    <Search width={21} height={21} />
+                </button>
+                <span>
+                    Вопросы
+                </span>
+                <button className={styles.title_filter}>
+                    <Filter />
+                </button>
+            </div>
             <div className={styles.right}>
                 {status === 'authenticated' && (
                     <>
@@ -78,7 +91,7 @@ const Navbar = () => {
                                     {data.user?.name}
                                 </span>
                                 <span className={styles.role}>
-                                    Админ
+                                    {data?.user?.isAdmin ? 'Админ' : level[data?.user?.level]}
                                 </span>
                             </div>
                         </div>

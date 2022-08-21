@@ -34,7 +34,7 @@ const NavigateMobile = () => {
 
     return (
         <div className={styles.navigate_mobile}>
-            <div style={{ height: '100%' }}>
+           <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
                 <button onClick={() => router.push('/')} className={styles.menu}>
                     <Menu fill={
                         router.pathname === '/' ? '#4971FF' : '#71716e'
@@ -49,12 +49,12 @@ const NavigateMobile = () => {
                     </span>
                 </button>
             </div>
-            <div style={{ height: '100%' }}>
+            <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
                 <button onClick={() => router.push('/ask-question')} className={styles.create}>
                     <Plus fill="white" width={28} height={28} />
                 </button>
             </div>
-            <div style={{ height: '100%' }}>
+            <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
                 <button onClick={() => router.push(isUser())} className={styles.user}>
                     <User fill={getActiveUser()} width={22} height={22} />
                     <span 

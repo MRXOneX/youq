@@ -16,6 +16,7 @@ export const authOptions = {
             if (session.user) {
                 session.user.id = user.id
                 session.user.isAdmin = user.isAdmin
+                session.user.level = user.level
             }
 
             return session

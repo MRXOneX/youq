@@ -7,8 +7,8 @@
     bottom: 10px;
     z-index: 100;
     width: 96%;
-    height: 56px;
-    padding: 10px;
+    height: 54px;
+    padding: 0 10px;
 
     display: none;
     align-items: center;
@@ -37,14 +37,13 @@
     align-items: center;
     justify-content: center;
 
-    height: 40px;
-    width: 40px;
+    height: 38px;
+    width: 38px;
     
     box-shadow: 0px 0px 5px rgba(42, 27, 61, 0.4);
 }
 .create:hover {
-    height: 38px;
-    width: 38px;
+    box-shadow: none;
 
     transition: .5s;
 }
@@ -65,7 +64,7 @@
     color: #71716e;
 }
 .menu_title {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -87,7 +86,7 @@
 }
 
 .user_title {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
 }
 
