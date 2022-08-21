@@ -56,7 +56,11 @@ const Question = () => {
                                     </span>
                                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                                         {question.answers.map(answer => (
-                                            <QuestionA user={data?.user} key={answer.id} answer={answer} />
+                                            <QuestionA 
+                                                user={data?.user} 
+                                                key={answer.id} 
+                                                answer={answer} 
+                                            />
                                         ))}
                                     </div>
                                     <StillQuestion />

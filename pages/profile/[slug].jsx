@@ -15,6 +15,7 @@ import PageContainer from '../../layouts/PageContainer'
 import loading from '../../utils/gifs/loading.gif'
 //
 import styles from '../../styles/pages/Profile.module.css'
+import ProfileQuestions from "../../components/Profile/ProfileQuestions"
 
 
 
@@ -30,12 +31,18 @@ const Profile = () => {
 
     const [menuActive, setMenuActive] = useState()
 
+    const menuAnswers = {
+        name: 'answers',
+        component: <ProfileAnswers answers={profile?.answers} />
+    }
+    const menuQuestions = {
+        name: 'questions',
+        component: <ProfileQuestions questions={profile?.questions} />
+    }
+
     useEffect(() => {
         if (profile?.answers) {
-            setMenuActive({
-                name: 'answers',
-                component: <ProfileAnswers answers={profile?.answers} />
-            })
+            setMenuActive(menuAnswers)
         }
     }, [profile])
 
@@ -62,9 +69,16 @@ const Profile = () => {
             {profile && status === 'success' ? (
                 <div className={styles.profile}>
                     <div className={styles.left}>
-                        <ProfileInfo profile={profile} />
+                        <ProfileInfo 
+                            menuAnswers={menuAnswers}
+                            menuQuestions={menuQuestions}
+
+                            menuActive={menuActive}
+                            setMenuActive={setMenuActive}
+                            profile={profile} 
+                        />
                         <div className={styles.menu}>
-                            <ProfileAnswers answers={profile.answers} />
+                            {menuActive?.component}
                         </div>
                         <div style={{ paddingTop: '80px' }} />
                     </div>
@@ -72,6 +86,8 @@ const Profile = () => {
                         <MenuInfo
                             questions={profile.questions}
                             answers={profile.answers}
+                            menuAnswers={menuAnswers}
+                            menuQuestions={menuQuestions}
 
                             menuActive={menuActive}
                             setMenuActive={setMenuActive}

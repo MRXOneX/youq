@@ -11,7 +11,15 @@ import level from '../../utils/level'
 import styles from '../../styles/components/Profile/ProfileInfo.module.css'
 
 
-const ProfileInfo = ({ profile }) => {
+const ProfileInfo = ({ 
+    profile, 
+    setMenuActive, 
+    menuActive,
+
+    menuAnswers,
+    menuQuestions,
+}) => {
+
     const { data } = useSession()
 
     const router = useRouter()
@@ -20,12 +28,12 @@ const ProfileInfo = ({ profile }) => {
     return (
         <div className={styles.profile_info}>
             <div className={styles.header}>
-                <Image 
-                    height={46} 
-                    width={46} 
-                    className={styles.avatar} 
-                    src={profile?.image} 
-                    alt="avatar" 
+                <Image
+                    height={46}
+                    width={46}
+                    className={styles.avatar}
+                    src={profile?.image}
+                    alt="avatar"
                 />
                 <div className={styles.info}>
                     <span className={styles.name}>
@@ -59,12 +67,28 @@ const ProfileInfo = ({ profile }) => {
                 </div>
             </div>
             <div className={styles.menu}>
-                <button>
-                    Мои ответы
-                </button>
-                <button>
-                    Мои вопросы
-                </button>
+                <div>
+                    {/* <div className={styles.menu_divider}/> */}
+                    <button
+                        onClick={() => setMenuActive(menuAnswers)}
+                        style={{
+                            background: menuActive?.name === 'answers' && '#E8F1FF'
+                        }}
+                        className={styles.btn_answers}
+                    >
+                        Мои ответы
+                    </button>
+                </div>
+                <div>
+                    <button
+                        onClick={() => setMenuActive(menuQuestions)}
+                        style={{
+                            background: menuActive?.name === 'questions' && '#E8F1FF'
+                        }}
+                        className={styles.btn_questions}>
+                        Мои вопросы
+                    </button>
+                </div>
             </div>
         </div>
     )

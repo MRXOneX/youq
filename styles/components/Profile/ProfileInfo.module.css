@@ -113,6 +113,31 @@
     display: none;
     justify-content: space-evenly;
 }
+/* .menu_divider {
+    position: absolute;
+    height: 1px;
+    background: #4971FF;
+    width: 100%;
+
+    left: 0;
+    bottom: 0;
+} */
+.btn_answers,.btn_questions {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    border-radius: 7px;
+
+    padding: 7px 14px
+}
+.btn_answers:hover,.btn_questions:hover {
+    background-color: #E8F1FF;
+}
 
 @media screen and (max-width: 620px) {
 

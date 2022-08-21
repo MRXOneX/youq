@@ -1,0 +1,51 @@
+
+.profile_question {
+    width: 100%;
+
+    padding: 10px;
+
+}
+.profile_question:not(:first-child) {
+    /* margin-top: 15px; */
+    border-top: 1px solid hsl(0, 0%, 85%);
+
+}
+
+.content {
+    padding: 6px;
+}
+
+.text {
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    overflow-wrap: anywhere;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    font-size: 18px;
+    font-weight: 500;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.text:hover {
+    transition: .4s;
+
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 620px) {
+    .header {
+        font-size: 16px;
+    }
+    .text {
+        font-size: 16px;
+    }
+
+    .item,.class {
+        font-size: 15px;
+    }
+}

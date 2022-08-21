@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 //
 import { trpc } from '../utils/trpc'
+import level from '../utils/level'
 //
 import styles from '../styles/components/QuestionA.module.css'
 
@@ -48,7 +49,7 @@ const QuestionA = ({ user, answer }) => {
                             {answer?.author?.name}
                         </span>
                         <span className={styles.level_info}>
-                            Hard
+                            {level[answer?.author?.level]}
                         </span>
                     </div>
                 </div>

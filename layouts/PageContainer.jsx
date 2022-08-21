@@ -9,7 +9,7 @@ import styles from '../styles/layouts/PageContainer.module.css'
 const PageContainer = ({
     children,
     style = {},
-    title = 'Вопросы и ответы онлайн - YouQ.pro',
+    title = 'Вопросы и ответы онлайн - YouQ.org',
     description = 'Решаем домашнее задание вместе '
 }) => {
     return (
