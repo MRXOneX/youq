@@ -7,12 +7,17 @@ import styles from '../../styles/components/Settings/NavigateSettings.module.css
 
 const NavigateSettings = () => {
 
+
     const router = useRouter()
+    
+
 
     return (
         <div className={styles.navigate_settings}>
             <div className={styles.header}>
-                <h3>Настройки</h3>
+                <span>
+                    Настройки
+                </span>
             </div>
             <div className={styles.content}>
                 <div
@@ -23,9 +28,7 @@ const NavigateSettings = () => {
                     className={styles.navigate_elem}
                 >
                     {/* <Image height={22} width={22} src={user} alt="" /> */}
-                    <span style={{
-                        fontWeight: router.pathname === '/settings/profile' && 700
-                    }} className={styles.title}>
+                    <span className={styles.title}>
                         Профиль
                     </span>
                 </div>

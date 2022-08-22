@@ -76,7 +76,7 @@ const ProfileInfo = ({
                         }}
                         className={styles.btn_answers}
                     >
-                        Мои ответы
+                        {data?.user?.id === profile.id ? 'Мои ответы' : 'Ответы'}
                     </button>
                 </div>
                 <div>
@@ -86,7 +86,7 @@ const ProfileInfo = ({
                             background: menuActive?.name === 'questions' && '#E8F1FF'
                         }}
                         className={styles.btn_questions}>
-                        Мои вопросы
+                        {data?.user?.id === profile.id ? 'Мои вопросы' : 'Вопросы'}
                     </button>
                 </div>
             </div>

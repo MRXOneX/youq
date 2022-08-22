@@ -2,8 +2,6 @@ import { useSession } from 'next-auth/react'
 //
 import { useRouter } from 'next/router'
 //
-import Image from 'next/image'
-//
 import Back from '../../utils/svg/back.svg'
 //
 import styles from '../../styles/components/Settings/Settings.module.css'
