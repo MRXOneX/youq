@@ -9,13 +9,13 @@ import { trpc } from "../../utils/trpc"
 import ProfileInfo from "../../components/Profile/ProfileInfo"
 import MenuInfo from '../../components/Profile/MenuInfo'
 import ProfileAnswers from "../../components/Profile/ProfileAnswers"
+import ProfileQuestions from "../../components/Profile/ProfileQuestions"
 // layouts
 import PageContainer from '../../layouts/PageContainer'
 //
 import loading from '../../utils/gifs/loading.gif'
 //
 import styles from '../../styles/pages/Profile.module.css'
-import ProfileQuestions from "../../components/Profile/ProfileQuestions"
 
 
 

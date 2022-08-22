@@ -89,7 +89,7 @@
 
     padding: 7px 10px;
 
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .user:hover {
@@ -166,7 +166,7 @@
 
     border-radius: 10px;
 
-    padding: 8px 16px;
+    padding: 7px 14px;
 
     background: none;
     border: none;
@@ -174,15 +174,15 @@
     cursor: pointer;
 
     color: #FF3D3D;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .exit_title {
     margin-left: 10px;
 }
 .exit:hover {
-    background-color: #FBE5E5;
+    background-color: #fbe8e8;
 
     transition: .5s;
 }

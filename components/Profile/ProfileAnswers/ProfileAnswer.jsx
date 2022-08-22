@@ -1,9 +1,11 @@
+import { memo } from 'react'
 //
 import { useRouter } from 'next/router'
 // utils
 import { classesOptionsObject, itemsOptionsObject } from '../../../utils/options'
 //
 import styles from '../../../styles/components/Profile/ProfileAnswers/ProfileAnswer.module.css'
+
 
 
 
@@ -42,4 +44,4 @@ const ProfileAnswer = ({ answer }) => {
     )
 }
 
-export default ProfileAnswer
+export default memo(ProfileAnswer)

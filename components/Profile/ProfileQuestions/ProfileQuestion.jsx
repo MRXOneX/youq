@@ -1,5 +1,7 @@
+import { memo } from 'react'
 //
 import { useRouter } from 'next/router'
+//
 import styles from '../../../styles/components/Profile/ProfileQuestions/ProfileQuestion.module.css'
 
 
@@ -31,4 +33,4 @@ const ProfileQuestion = ({ question }) => {
     )
 }
 
-export default ProfileQuestion
+export default memo(ProfileQuestion)

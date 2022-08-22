@@ -8,7 +8,6 @@ import styles from '../../styles/components/Settings/Settings.module.css'
 
 
 const SettingsWrapper = ({ children }) => {
-
     const { data } = useSession()
 
     const router = useRouter()

@@ -8,6 +8,7 @@ import styles from '../../styles/pages/Settings.module.css'
 
 
 const Settings = () => {
+    
     return (
         <PageContainer>
             <div className={styles.settings}>

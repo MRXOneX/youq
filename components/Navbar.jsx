@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 //
 import Link from 'next/link'
 //
@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 //
 import { signIn, useSession, signOut } from 'next-auth/react'
 //
+import useWindowSize from '../hooks/useWindowSize'
 import useOutside from '../hooks/useOutside'
 // components
 import Dropdown from '../layouts/Dropdown'
@@ -28,9 +29,12 @@ const Navbar = () => {
 
     const { data, status } = useSession()
 
+    const [width, height] = useWindowSize()
+
     const [isOpenUser, setIsOpenUser] = useState(false)
 
     const router = useRouter()
+
 
     const handleSignIn = async () => {
         router.push('/auth')
@@ -45,7 +49,15 @@ const Navbar = () => {
         })
     }
 
-    const { ref } = useOutside(() => setIsOpenUser(false))
+    useEffect(() => {
+        if (width <= 620) {
+            setIsOpenUser(false)
+        }
+    }, [width])
+
+
+    const { ref } = useOutside(setIsOpenUser)
+
 
     return (
         <div className={styles.navbar}>
@@ -77,14 +89,16 @@ const Navbar = () => {
                     </>
                 )}
                 {status === 'authenticated' ? (
-                    <div style={{ position: 'relative' }}>
-                        <div onClick={() => handleSignOut()} className={styles.user}>
-                            <Image 
+                    <div ref={ref} style={{ position: 'relative' }}>
+                        <div style={{
+                            backgroundColor: isOpenUser && '#DEEBFF'
+                        }} onClick={() => setIsOpenUser(prev => !prev)} className={styles.user}>
+                            <Image
                                 width={32}
                                 height={32}
-                                alt='avatar' 
-                                src={data.user?.image} 
-                                className={styles.avatar} 
+                                alt='avatar'
+                                src={data.user?.image}
+                                className={styles.avatar}
                             />
                             <div className={styles.name_role}>
                                 <span className={styles.name}>
@@ -96,12 +110,17 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <Dropdown ref={ref} isShow={isOpenUser} setIsOpenUser={setIsOpenUser}>
+                        <Dropdown isShow={isOpenUser} setIsOpenUser={setIsOpenUser}>
                             <div className={styles.dropdown}>
-                                <button onClick={handleSignOut} className={styles.exit}>
-                                    <Exit color="#FF3D3D" size={22} />
+                                <button onClick={() => router.push(`/profile/${data?.user?.id}`)} className={styles.exit}>
                                     <span className={styles.exit_title}>
-                                        Sign out
+                                        {data?.user?.name}
+                                    </span>
+                                </button>
+                                <button onClick={handleSignOut} className={styles.exit}>
+                                    <Exit color="#FF3D3D" size={20} />
+                                    <span className={styles.exit_title}>
+                                        Выйти
                                     </span>
                                 </button>
                             </div>

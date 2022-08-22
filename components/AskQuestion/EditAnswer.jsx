@@ -9,19 +9,29 @@ import styles from '../../styles/components/AskQuestion/EditAnswer.module.css'
 
 const EditAnswer = ({ authorId, questionId }) => {
     const [answer, setAnswer] = useState('')
+    const [test, setTest] = useState([])
+    console.log(test)
 
 
-    const createAnswer = trpc.useMutation(['question_protected.create_answer'])
+    const { mutateAsync: createAnswer } = trpc.useMutation(['question_protected.create_answer'])
     
     console.log(createAnswer)
 
     const onCreateAnswer = () => {
-        createAnswer.mutate({ 
+        createAnswer({ 
             text: answer,
             authorId,
             questionId
          })
     }
+
+    // trpc.useSubscription(['question_protected.onCreateAnswer'], {
+    //     onNext: (data) => {
+    //         setTest(prev => {
+    //             return [...prev, data]
+    //         })
+    //     }
+    // })
 
     return (
         <div className={styles.edit_answer}>

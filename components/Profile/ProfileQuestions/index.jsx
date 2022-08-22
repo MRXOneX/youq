@@ -1,6 +1,9 @@
+import { memo } from 'react'
+//
 import ProfileQuestion from './ProfileQuestion'
 //
 import styles from '../../../styles/components/Profile/ProfileQuestions/ProfileQuestions.module.css'
+
 
 
 const ProfileQuestions = ({ questions }) => {
@@ -23,4 +26,4 @@ const ProfileQuestions = ({ questions }) => {
 }
 
 
-export default ProfileQuestions
+export default memo(ProfileQuestions)
