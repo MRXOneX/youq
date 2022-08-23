@@ -114,7 +114,7 @@ const Navbar = () => {
                             <div className={styles.dropdown}>
                                 <button onClick={() => router.push(`/profile/${data?.user?.id}`)} className={styles.exit}>
                                     <span className={styles.exit_title}>
-                                        {data?.user?.name}
+                                        Мой профиль
                                     </span>
                                 </button>
                                 <button onClick={handleSignOut} className={styles.exit}>

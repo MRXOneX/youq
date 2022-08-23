@@ -7,6 +7,7 @@ import RegularAnswer from './Icons/RegularAnswer'
 import QuestionComment from './Icons/QuestionComment'
 //
 import styles from '../styles/components/QuestionQToolbar.module.css'
+import { trpc } from '../utils/trpc'
 
 
 
@@ -22,6 +23,16 @@ const QuestionQToolbar = ({ authorId, questionId }) => {
             }
 
             return tab
+        })
+    }
+
+    const { mutateAsync: createRating } = trpc.useMutation(['question_protected.rating_question'])
+
+
+    const onRating = async isRating => {
+        await createRating({
+            isRating,
+            questionId
         })
     }
 
@@ -57,6 +68,12 @@ const QuestionQToolbar = ({ authorId, questionId }) => {
                     <span className={styles.btn_name}>
                         Уточнить
                     </span>
+                </button>
+                <button onClick={() => onRating(true)}>
+                    up
+                </button>
+                <button onClick={() => onRating(false)}>
+                    down
                 </button>
             </div>
             {selectedTab && selectedTab.component}
