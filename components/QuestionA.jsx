@@ -1,5 +1,5 @@
 //
-import { useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 //
 import Image from 'next/image'
 //
@@ -12,8 +12,6 @@ import styles from '../styles/components/QuestionA.module.css'
 
 const QuestionA = ({ user, answer }) => {
     const [comment, setComment] = useState('')
-
-
 
 
     const answerMutate = trpc.useMutation(['question_protected.create_comment_to_answer'])
@@ -32,6 +30,7 @@ const QuestionA = ({ user, answer }) => {
             setComment('')
         }
     }
+
 
     return (
         <div className={styles.question_a}>
@@ -55,8 +54,8 @@ const QuestionA = ({ user, answer }) => {
                 </div>
             </div>
             <div className={styles.content}>
-                <p className={styles.text}>
-                    {answer?.text}
+                <p dangerouslySetInnerHTML={{__html: answer?.textHtml}} className={styles.text}>
+                    
                 </p>
             </div>
             <div 
@@ -108,4 +107,4 @@ const QuestionA = ({ user, answer }) => {
     )
 }
 
-export default QuestionA
+export default memo(QuestionA)

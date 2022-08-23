@@ -1,0 +1,44 @@
+.my_editor {
+    border: 1px solid;
+    border-color: hsl(0, 0%, 80%);
+
+    min-height: 170px;
+    max-height: 300px;
+    overflow-y: auto;
+
+    border-radius: 8px;
+
+    cursor: text;
+
+    padding: 11px;
+    margin: 10px 0;
+}
+
+.btn_add_answer {
+    padding: 4px;
+
+    border-radius: 10px;
+
+    border: none;
+    outline: none;
+    background: #4971FF;
+
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.btn_add_answer:hover {
+    transition: .3s;
+
+    background-color: #2851E4;
+}
+
+
+@media screen and (max-width: 620px) {
+    .btn_add_answer {
+        font-size: 15px;
+    }
+}

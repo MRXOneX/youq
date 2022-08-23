@@ -29,17 +29,17 @@ const QuestionQ = ({ question }) => {
                             {question?.author?.name}
                         </span>
                         <span className={styles.hours_item}>
-                            {moment(String(question.createdAt)).fromNow()}
+                            {moment(String(question?.createdAt)).fromNow()}
                         </span>
                     </div>
                 </div>
                 <span className={styles.rating}>
-                    {question.rating}
+                    {question?.rating}
                 </span>
             </div>
             <div className={styles.content}>
                 <p className={styles.text}>
-                    {question?.text}
+                    {question?.textHtml}
                 </p>
             </div>
             {question?.comments?.length > 0 && (

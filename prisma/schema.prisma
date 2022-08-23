@@ -80,9 +80,11 @@ model Question {
   createdAt DateTime? @default(now())
   updatedAt DateTime? @updatedAt
 
-  text  String @db.VarChar(3000)
-  item  Item
-  class Class
+  textHtml String @db.VarChar(3000)
+  text     String @db.VarChar(3000)
+  
+  item     Item
+  class    Class
 
   isAnonymously Boolean @default(false)
 
@@ -100,9 +102,11 @@ model Question {
 
 model Answer {
   id        Int      @id @default(autoincrement())
-  text      String   @db.VarChar(3000)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  textHtml String @db.VarChar(3000)
+  text     String @db.VarChar(3000)
 
   question   Question? @relation(fields: [questionId], references: [id])
   questionId Int?
@@ -118,9 +122,10 @@ model Answer {
 
 model Comment {
   id        Int       @id @default(autoincrement())
-  text      String    @db.VarChar(300)
   createdAt DateTime? @default(now())
   updatedAt DateTime? @updatedAt
+
+  text String @db.VarChar(300)
 
   question   Question? @relation(fields: [questionId], references: [id])
   questionId Int?

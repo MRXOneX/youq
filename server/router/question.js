@@ -58,6 +58,9 @@ export const questionRouter = createRouter()
                     answers: {
                         include: {
                             author: true
+                        },
+                        orderBy: {
+                            id: "desc"
                         }
                     },
                     comments: {

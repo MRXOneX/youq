@@ -14,6 +14,7 @@ export const protectedQuestionRouter = createProtectedRouter()
         input: z
             .object({
                 text: z.string(),
+                textHtml: z.string(),
                 authorId: z.string(),
                 item: z.string(),
                 class: z.string(),
@@ -22,6 +23,7 @@ export const protectedQuestionRouter = createProtectedRouter()
             const savedQuestion = await ctx.prisma.question.create({
                 data: {
                     text: input.text,
+                    textHtml: input.textHtml,
                     item: input.item,
                     author: { connect: { id: input.authorId } },
                     class: input.class,
@@ -39,15 +41,16 @@ export const protectedQuestionRouter = createProtectedRouter()
     .mutation('create_answer', {
         input: z.object({
             text: z.string(),
-            questionId: z.number(),
-            authorId: z.string()
+            textHtml: z.string(),
+            questionId: z.number()
         }),
         async resolve({ ctx, input }) {
             return await ctx.prisma.answer.create({
                 data: {
                     text: input.text,
+                    textHtml: input.textHtml,
                     question: { connect: { id: input.questionId } },
-                    author: { connect: { id: input.authorId } }
+                    author: { connect: { id: ctx?.session?.user?.id} }
                 }
             })
         }

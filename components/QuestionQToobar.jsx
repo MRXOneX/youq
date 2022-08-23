@@ -1,13 +1,14 @@
 import { useState } from 'react'
+//
+import { trpc } from '../utils/trpc'
 // components
-import EditAnswer from './AskQuestion/EditAnswer'
+import MyEditor from './MyEditor'
 import EditComment from './AskQuestion/EditComment'
 // icons
 import RegularAnswer from './Icons/RegularAnswer'
 import QuestionComment from './Icons/QuestionComment'
 //
 import styles from '../styles/components/QuestionQToolbar.module.css'
-import { trpc } from '../utils/trpc'
 
 
 
@@ -45,7 +46,7 @@ const QuestionQToolbar = ({ authorId, questionId }) => {
                     }}
                     onClick={() => onChangeTab({
                         name: 'edit_answer',
-                        component: <EditAnswer authorId={authorId} questionId={questionId} />
+                        component: <MyEditor setSelectedTab={setSelectedTab} questionId={questionId} />
                     })}
                     className={styles.btn}
                 >

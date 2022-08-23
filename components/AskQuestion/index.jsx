@@ -39,6 +39,7 @@ const AskQuestion = () => {
     const createQuestion = () => {
         question.mutate({
             text: value,
+            textHtml: value,
             authorId:  data?.user?.id,
             item: selectedItem.value,
             class: selectedClass.value
