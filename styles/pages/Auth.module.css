@@ -11,7 +11,7 @@
 
     border-radius: 10px;
 
-    width: 620px;
+    width: 700px;
 
     display: flex;
 
@@ -33,6 +33,7 @@
     font-size: 3em;
 
     color: #4971FF;
+    font-family: 'Nunito';
 }
 .sublogo {
     color: #2e5af9;
@@ -49,9 +50,9 @@
 
 .header {
     color: #172b4d;
-    font-size: 26px;
+    font-size: 22px;
 
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .form {
@@ -68,17 +69,17 @@
     border: none;
     border: 1px solid;
     border-color: hsl(0, 0%, 80%);
-    padding: 4px 12px;
+    padding: 5px 10px;
 
 
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
 }
 .input:not(:first-child) {
     margin-top: 20px;
 }
 .input:focus {
-    padding: 3px 11px;
+    padding: 4px 9px;
 
     border: 2px solid #2684ff;
 }
@@ -87,10 +88,10 @@
     border: none;
     cursor: pointer;
     outline: none;
-    padding: 4px 12px;
+    padding: 5px 10px;
     margin-top: 20px;
 
-    font-weight: 700;
+    font-weight:600;
     font-size: 18px;
 
     color: white;
@@ -148,6 +149,10 @@
     }
     .header {
         display: none;
+    }
+
+    .auth {
+        padding: 12px;
     }
 }
 

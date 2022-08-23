@@ -29,8 +29,8 @@ const ProfileInfo = ({
         <div className={styles.profile_info}>
             <div className={styles.header}>
                 <Image
-                    height={46}
-                    width={46}
+                    height={43}
+                    width={43}
                     className={styles.avatar}
                     src={profile?.image}
                     alt="avatar"

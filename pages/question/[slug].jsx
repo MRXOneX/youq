@@ -43,11 +43,11 @@ const Question = () => {
                             <Image height={150} objectFit="contain" src={loading} />
                         </div>
                     )}
-                    {status === 'success' && (
+                    {status === 'success' && question && (
                         <>
                             <QuestionQ question={question} />
                             {data?.user && (
-                                <QuestionQToolbar authorId={data?.user?.id} questionId={question.id} />
+                                <QuestionQToolbar authorId={data?.user?.id} questionId={question?.id} />
                             )}
                             {question?.answers?.length > 0 && (
                                 <>
