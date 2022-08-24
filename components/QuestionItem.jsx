@@ -6,6 +6,8 @@ import { useRouter } from 'next/router'
 //
 import moment from 'moment'
 //
+import { itemsOptionsObject } from '../utils/options'
+//
 import styles from '../styles/components/QuestionItem.module.css'
 
 
@@ -32,7 +34,7 @@ const QuestionItem = ({ question }) => {
                     />
                     <div className={styles.info}>
                         <span className={styles.name}>
-                            {question?.author?.name}
+                            {itemsOptionsObject[question?.item]}
                         </span>
                         <div className={styles.hours_item}>
                             <span>
@@ -53,7 +55,7 @@ const QuestionItem = ({ question }) => {
             <div className={styles.footer}>
                 <div>
                     {question?.answers?.length > 0 && (
-                        <span>
+                        <span className={styles.footer_count_answers}>
                             Ответов: <b>{question.answers.length}</b>
                         </span>
                     )}

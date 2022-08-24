@@ -41,7 +41,7 @@
 
     line-height: 16px;
 
-    padding-left: 10px;
+    padding-left: 7px;
 
     font-size: 16px;
 }
@@ -81,7 +81,7 @@
 
 .footer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 }
 
@@ -107,6 +107,12 @@
     color: white;
 }
 
+.footer_count_answers {
+    font-size: 17px;
+    font-family: 'Nunito';
+    font-weight: 600;
+}
+
 
 
 @media screen and (max-width: 620px) {
@@ -119,6 +125,10 @@
 
     .answer {
         padding: 3px 6px;
+        font-size: 16px;
+    }
+
+    .footer_count_answers {
         font-size: 16px;
     }
 }

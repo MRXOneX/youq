@@ -37,16 +37,25 @@ const Navbar = () => {
 
 
     const handleSignIn = async () => {
-        router.push('/auth')
-        await signIn('github', {
-            callbackUrl: 'http://localhost:3000/'
-        })
+        try {
+            await signIn('github', {
+                callbackUrl: 'http://localhost:3000/'
+            })
+            setIsOpenUser(false)
+            router.push('/auth')
+        } catch (error) {
+
+        }
 
     }
     const handleSignOut = async () => {
-        await signOut({
-            callbackUrl: 'http://localhost:3000/'
-        })
+        try {
+            await signOut({
+                callbackUrl: 'http://localhost:3000/'
+            })
+        } catch (error) {
+
+        }
     }
 
     useEffect(() => {

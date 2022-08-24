@@ -29,6 +29,10 @@ const NavigateMobile = () => {
             return '#4971FF'
         }
 
+        if (router.pathname === '/auth') {
+            return '#4971FF'
+        }
+
         return '#71716e'
     }
 
